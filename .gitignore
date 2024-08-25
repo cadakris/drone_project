@@ -1,0 +1,18 @@
+# Ignore Python bytecode files
+*.pyc
+__pycache__/
+
+# Ignore Django SQLite database
+db.sqlite3
+
+# Ignore media uploads (if you do not want to track uploaded files)
+/media/
+
+# Ignore log files
+*.log
+
+# Ignore Node.js modules (if using Node or React)
+node_modules/
+
+# Ignore environment variables file
+.env

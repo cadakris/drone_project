@@ -89,8 +89,12 @@ WSGI_APPLICATION = 'drone.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'drone_db',
+        'USER': 'krisc',
+        'PASSWORD': '12Coding3!',
+        'HOST': 'http://127.0.0.1:8000/',  # Set to the appropriate host
+        'PORT': '5432',       # Default port for PostgreSQL
     }
 }
 

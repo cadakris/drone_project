@@ -1,3 +1,4 @@
+
 # Ignore Python bytecode files
 *.pyc
 __pycache__/
@@ -16,3 +17,7 @@ node_modules/
 
 # Ignore environment variables file
 .env
+
+#Ignore the virtual evironment directory
+venv/
+

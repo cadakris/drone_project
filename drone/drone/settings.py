@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': 'drone_db',
         'USER': 'krisc',
         'PASSWORD': '12Coding3!',
-        'HOST': 'http://127.0.0.1:8000/',  # Set to the appropriate host
+        'HOST': '127.0.0.1',  # Set to the appropriate host
         'PORT': '5432',       # Default port for PostgreSQL
     }
 }

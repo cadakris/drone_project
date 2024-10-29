@@ -1,8 +1,11 @@
 from django.shortcuts import render
-
-# Create your views here.
-
 from django.http import HttpResponse
+from django.http import JsonResponse
+
+from django.http import JsonResponse
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return JsonResponse({"message": "Hello, world. You're at the index."})
+
+def about(request):
+    return JsonResponse({"message": "About page content goes here."})

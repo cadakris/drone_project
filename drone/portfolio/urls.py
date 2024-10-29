@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),  # This maps the empty path '' to the index view
+    path('about/', views.about, name='about')
 ]

@@ -16,11 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include  # Make sure 'include' is imported
+from portfolio import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('testing/', include('portfolio.urls')),  # This maps the root URL to portfolio.urls
-    # OR use 'portfolio/' if you want to access via /portfolio/
-    # path('portfolio/', include('portfolio.urls')),
+    path('admin/', admin.site.urls),  # Admin path
+    path('drone/', views.index, name='index'), # Pointing directly to the index view
+    path('drone/about', views.about, name='about')  # Specify the about path
 ]
 

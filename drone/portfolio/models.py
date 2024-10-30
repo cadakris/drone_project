@@ -28,9 +28,9 @@ class About(models.Model):
     def __str__(self):
         return self.title
 
-def project_posts_list(request):
-    # Query all ProjectPost objects and convert to a list of dictionaries
-    project_posts = list(ProjectPost.objects.values(
-        'project_title', 'image', 'video', 'description', 'project_type'
-    ))
-    return JsonResponse(project_posts, safe=False)  # Return as JSON
+# def project_posts_list(request):
+#     # Query all ProjectPost objects and convert to a list of dictionaries
+#     project_posts = list(ProjectPost.objects.values(
+#         'project_title', 'image', 'video', 'description', 'project_type'
+#     ))
+#     return JsonResponse(project_posts, safe=False)  # Return as JSON

@@ -1,4 +1,6 @@
 from django.db import models
+from django.http import JsonResponse
+# from .models import ProjectPost
 
 # Create your models here.
 
@@ -8,7 +10,7 @@ class ProjectPost(models.Model):
         ('DJI', 'DJI'),
     ]
 
-    project_title = models.CharField(max_length=300)
+    project_title = "Sample Title"
     image = models.ImageField(upload_to='project_images/')
     video = models.URLField(blank=True, null=True)
     description = models.TextField()
@@ -25,3 +27,10 @@ class About(models.Model):
 
     def __str__(self):
         return self.title
+
+def project_posts_list(request):
+    # Query all ProjectPost objects and convert to a list of dictionaries
+    project_posts = list(ProjectPost.objects.values(
+        'project_title', 'image', 'video', 'description', 'project_type'
+    ))
+    return JsonResponse(project_posts, safe=False)  # Return as JSON

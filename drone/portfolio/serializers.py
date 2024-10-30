@@ -4,4 +4,4 @@ from .models import ProjectPost
 class ProjectPostSerializer(serializers.ModelSerializer):
     class Meta: 
         model = ProjectPost
-        fields = '_all_' # You can specify the fields you want to include
+        fields = ['project_title', 'image', 'video', 'description', 'project_type'] # You can specify the fields you want to include

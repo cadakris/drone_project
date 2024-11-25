@@ -29,7 +29,7 @@ const ProjectPosts = () => {
             <ul>
                 {post.map((post) => (
                     <li key={post.id}>
-                        <h2>{post.project_title}</h2>
+                        <h2 class="font-italics underline">{post.project_title}</h2>
                         <p>{post.description}</p>
                         {/* Add more fields here as needed */}
                     </li>

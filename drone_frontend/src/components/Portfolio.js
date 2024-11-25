@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import ProjectPost from './ProjectPost';
 
 const Portfolio = () => {
     const [post, setPosts] = useState ([]);
@@ -21,13 +22,14 @@ const Portfolio = () => {
     if (error) return <div> Error: {error.message} </div>
 
     return (
-        <section className="portfolio">
-        {projects.map(project => (
-          <ProjectPost key={project.id} {...project} />
-        ))}
-      </section>
+        <div>
+            <section className="portfolio">
+                {post.map(post => (
+                <ProjectPost key={post.id} {...post} />
+                ))}
+            </section>
+        </div>
     )
-
 };
 
 

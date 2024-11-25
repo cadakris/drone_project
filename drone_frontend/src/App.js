@@ -6,7 +6,7 @@ import ProjectPosts from './components/ProjectPost';
 function App() {
   return (
     <div className="App">
-    <h1  class="text-amber-800">HELLOOO</h1>
+    <h1  class="text-blue-950">HELLOOO</h1>
     <ProjectPosts /> {/* Add ProjectPosts component here */}
   </div>
   );

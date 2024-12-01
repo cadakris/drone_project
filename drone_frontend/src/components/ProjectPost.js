@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 const ProjectPosts = ({post}) => {
+    console.log(post)
    
     return (
         <div>
-            <h2>{post.project_title}</h2>
+            <p>{post.project_title}</p>
         </div>
   
     )

@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
 
-    <ProjectPosts /> {/* Add ProjectPosts component here */}
+    <ProjectPosts /> 
     <Portfolio />
   </div>
   );

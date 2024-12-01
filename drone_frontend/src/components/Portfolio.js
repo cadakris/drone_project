@@ -5,6 +5,7 @@ import ProjectPost from './ProjectPost';
 const Portfolio = () => {
     const [post, setPosts] = useState ([]);
     const [error, setError] = useState ([]);
+    
 
     useEffect(() => {
          const fetchPosts = async () => {

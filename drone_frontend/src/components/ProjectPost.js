@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 
-const ProjectPosts = () => {
+const ProjectPosts = ({post}) => {
    
-    return(
+    return (
         <div>
-            <h1>HELLO</h1>
+            <h2>{post.project_title}</h2>
         </div>
+  
     )
 
 };

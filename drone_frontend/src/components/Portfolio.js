@@ -27,7 +27,7 @@ const Portfolio = () => {
     return (
         <div>
             <section className="portfolio">
-                {posts.map(post => (
+                {posts.map((post) => (
                 <ProjectPost key={post.id} post={post} />
                 ))}
             </section>

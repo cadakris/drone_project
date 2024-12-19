@@ -57,11 +57,10 @@ MIDDLEWARE = [
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-# FOR PRODUCTION
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-#     "https://yourdomain.com",
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    # "https://yourdomain.com",
+]
 
 ROOT_URLCONF = 'drone.urls'
 

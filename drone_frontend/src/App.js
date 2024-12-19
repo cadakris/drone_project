@@ -2,15 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 import Portfolio from './components/Portfolio'
 import ProjectPosts from './components/ProjectPost';
+import Navbar from './components/Navbar';
 
 
 
 function App() {
   return (
     <div className="App">
-
-    <ProjectPosts /> 
-    <Portfolio />
+    <Navbar/>
+    {/* <ProjectPosts /> 
+    <Portfolio /> */}
   </div>
   );
 }

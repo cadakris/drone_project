@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import logo from '../images/logo.jpg'
+import { IoIosArrowForward } from "react-icons/io";
+
 
 function Navbar() {
 
@@ -18,15 +20,18 @@ function Navbar() {
         </div>
 
         <ul className="flex flex-col space-y-4">
-          <li>
-            <a href="about" className="hover:text-gray-600">Home</a>
+          <li className="flex items-center">
+            <IoIosArrowForward className="mr-2" />
+              <a href="about" className="hover:text-gray-600"> Home</a>
           </li> 
 
-          <li>
+          <li className="flex items-center">
+            <IoIosArrowForward className="mr-2" />
             <a href="contact" className="hover:text-gray-600">Contact</a>
           </li> 
 
-          <li>
+          <li className="flex items-center">
+            <IoIosArrowForward className="mr-2" />
             <a href="gallery" className="hover:text-gray-600">Gallery</a>
           </li>
 

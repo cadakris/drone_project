@@ -16,10 +16,10 @@ function Navbar() {
     <>
       <nav className="text-black px-4 py-3 flex justify-between items-center p-4">
         <div className="flex items-center">
-          <img src={logo} alt="logo" className="h-10 w-auto" />
+          <img src={logo} alt="logo" className="h-20 w-auto" />
         </div>
 
-        <ul className="flex flex-col space-y-4">
+        <ul className="flex flex-col spae-y-0.5">
           <li className="flex items-center">
             <IoIosArrowForward className="mr-2" />
               <a href="about" className="hover:text-gray-600"> Home</a>

@@ -1,6 +1,6 @@
 // /src/components/Hero/RightContainer.js
 import React, { useRef } from "react";
-import { videoData } from "../../utils/MediaData";
+import { videoData } from "./MediaData";
 
 function RightContainer({ hoveredSide, setHoveredSide }) {
   const videoRef = useRef(null);

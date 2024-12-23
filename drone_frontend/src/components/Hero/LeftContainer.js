@@ -1,6 +1,6 @@
 // /src/components/Hero/LeftContainer.js
 import React, { useRef } from "react";
-import { videoData } from "../../utils/MediaData";
+import { videoData } from "./MediaData";
 
 function LeftContainer({ hoveredSide, setHoveredSide }) {
   const videoRef = useRef(null);

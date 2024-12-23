@@ -50,7 +50,7 @@ function RightContainer({ hoveredSide, setHoveredSide }) {
         }`}
         style={{ mixBlendMode: "difference" }} // For inverted text effect
       >
-        FTP
+         Something
         {/* or VPS if you'd prefer that text */}
       </div>
     </div>

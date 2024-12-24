@@ -1,4 +1,3 @@
-// /src/components/Hero/Hero.js
 import React, { useState } from "react";
 import LeftContainer from "./LeftContainer";
 import RightContainer from "./RightContainer";

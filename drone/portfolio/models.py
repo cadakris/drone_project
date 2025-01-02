@@ -7,10 +7,10 @@ from django.http import JsonResponse
 class ProjectPost(models.Model):
     PROJECT_TYPE_CHOICES = [
         ('FPV', 'FPV'),
-        ('DJI', 'DJI'),
+        ('SD', 'SD'),
     ]
 
-    project_title = "Sample Title"
+    project_title = models.TextField(max_length=50, default="Drone Project")
     image = models.ImageField(upload_to='project_images/')
     video = models.URLField(blank=True, null=True)
     description = models.TextField()

@@ -19,7 +19,7 @@ function Navbar() {
           <img src={logo} alt="logo" className="h-20 w-auto" />
         </div>
 
-        <ul className="flex flex-col spae-y-0.5">
+        <ul className="flex flex-col space-y-0.5">
           <li className="flex items-center">
             <IoIosArrowForward className="mr-2" />
               <a href="about" className="hover:text-gray-600"> Home</a>

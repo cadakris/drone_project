@@ -7,7 +7,7 @@ import Portfolio from './components/Portfolio';
 
 function App() {
   const fpvRef = useRef(null); // Reference for FPV section
-  const droneRef = useRef(null); // Reference for Drone section
+  const sdRef = useRef(null); // Reference for Drone section
 
   // Functions to scroll to the respective sections
   const scrollToFPV = () => {
@@ -16,22 +16,22 @@ function App() {
     }
   };
 
-  const scrollToDrone = () => {
-    if (droneRef.current) {
-      droneRef.current.scrollIntoView({ behavior: "smooth" });
+  const scrollToSD = () => {
+    if (sdRef.current) {
+      sdRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <div className="App">
       <Navbar />
-      <Hero scrollToFPV={scrollToFPV} scrollToDrone={scrollToDrone} />
+      <Hero scrollToFPV={scrollToFPV} scrollToSD={scrollToSD} />
       <AboutBlurb />
       <div ref={fpvRef}>
-        <Portfolio title="FPV Projects" filter="FPV" />
+        <Portfolio title="FPV Gallery" filter="FPV" />
       </div>
-      <div ref={droneRef}>
-        <Portfolio title="Drone Projects" filter="Drone" />
+      <div ref={sdRef}>
+        <Portfolio title="Stabilized Drone Gallery" filter="SD" />
       </div>
     </div>
   );

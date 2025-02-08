@@ -60,7 +60,7 @@ function LeftContainer({ hoveredSide, setHoveredSide, scrollToSection }) {
       >
         <h1 className="text-5xl font-bold text-white text-left">FPV</h1>
         <p
-          className={`text-base text-white text-left mt-3 transition-opacity duration-300 ${
+          className={`text-base text-white text-left mt-3 transition-opacity duration-200 ${
             descFullyRevealed ? "opacity-100" : "opacity-0"
           }`}
         >

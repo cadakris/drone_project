@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from "./components/Hero/Hero";
 import AboutBlurb from './components/AboutBlurb';
 import Portfolio from './components/Portfolio';
+import Footer from './components/Footer';
 
 function App() {
   const fpvRef = useRef(null); // Reference for FPV section
@@ -33,6 +34,7 @@ function App() {
       <div ref={sdRef}>
         <Portfolio title="Stabilized Drone Gallery" filter="SD" />
       </div>
+      <Footer />
     </div>
   );
 }

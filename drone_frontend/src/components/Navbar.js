@@ -3,7 +3,6 @@ import { useState } from 'react';
 import logo from '../images/logo.jpg'
 import { IoIosArrowForward } from "react-icons/io";
 
-
 function Navbar() {
 
   const[language, setLanguage] = useState('en');
@@ -14,7 +13,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="text-black px-4 py-3 flex justify-between items-center p-4">
+      <nav className="text-black px-4 py-3 flex justify-between items-center p-4 ">
         <div className="flex items-center">
           <img src={logo} alt="logo" className="h-20 w-auto" />
         </div>

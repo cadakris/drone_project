@@ -22,7 +22,7 @@ function RightContainer({ hoveredSide, setHoveredSide, scrollToSection }) {
     }
     timerRef.current = setTimeout(() => {
       setDescFullyRevealed(true);
-    }, 1000); // Reveal description after 1 second
+    }, 700); // Reveal description after 1 second
   };
 
   const handleMouseLeave = () => {
@@ -43,6 +43,7 @@ function RightContainer({ hoveredSide, setHoveredSide, scrollToSection }) {
       className={`relative h-full transition-all duration-500 overflow-hidden ${widthClass} bg-gray-800`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={scrollToSection}
     >
       <video
         ref={videoRef}
@@ -51,22 +52,21 @@ function RightContainer({ hoveredSide, setHoveredSide, scrollToSection }) {
         muted
         className="w-full h-full object-cover"
       />
-      <div
-        className={`absolute top-1/2 left-[35%] -translate-x-1/2 -translate-y-1/2 text-5xl font-bold text-white transition-opacity duration-500 cursor-pointer ${
-          hoveredSide === "right" ? "opacity-100" : "opacity-0"
-        }`}
-        style={{ mixBlendMode: "difference" }}
-        onClick={scrollToSection}
-      >
-        <h1 className="text-5xl font-bold text-white text-left">Stabilized Drone</h1>
-        <p
-          className={`text-base text-white text-left mt-3 transition-opacity duration-200 ${
-            descFullyRevealed ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          Discover stunning stabilized drone visuals!
-        </p>
-      </div>
+<div
+  className={`absolute top-[36%] left-[28%] -translate-x-1/2 text-white transition-opacity duration-500 cursor-pointer`}
+  style={{ mixBlendMode: "difference" }}
+>
+  <div className="relative">
+    <h1 className="text-5xl font-bold leading-none">Stabilized Drone</h1>
+    <p
+      className={`text-base mt-3 transition-opacity duration-200 ${
+        descFullyRevealed ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      Discover stunning stabilized drone visuals!
+    </p>
+  </div>
+</div>
     </div>
   );
 }

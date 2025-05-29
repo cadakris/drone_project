@@ -2,32 +2,88 @@ import React from 'react'
 import WhatsApp from '../images/WhatsApp.png';
 import Email from '../images/Email.png';
 import Instagram from '../images/Instagram.png'
-import { HiOutlineMail } from "react-icons/hi";
+// import { HiOutlineMail } from "react-icons/hi";
+import { IoIosArrowForward } from "react-icons/io";
+import logoNoBackground from '../images/logoNoBackground.png';
 
 function Footer() {
   return (
   <>
-    <div className="flex items-stretch h-60">
-      <div className="w-1/3 bg-gray-400 flex items-center justify-end pr-10">
-        <p className=" text-white text-right">
-          Seen <br/>Enough?
+<div className="flex items-stretch h-60">
+  {/* Left Side */}
+  <div className="w-1/3 bg-blue-900 flex items-center justify-start pr-10">
+    <p className="text-white text-xl pl-20">
+      SEEN <br />
+      ENOUGH?
+    </p>
+  </div>
 
-        </p>
-      </div>
-
-      <div className="w-2/3 bg-gray-400 flex flex-col items-center justify-center text-3xl">
-        <p>Get in touch!</p><br/>
-          <ul className="flex space-x-4">
-            <li>
-              <img src={WhatsApp} alt="WhatsApp Logo" className="h-16 w-16 object-contain round-full"/>
-            </li>
-            <li>
-              <img src={Email} alt="Email Logo" className="h-16 w-16 object-contain round-full"/>
-            </li>
-              <img src={Instagram} alt="Instagram Logo" className="h-16 w-16 object-contain round-full"/>
-          </ul>
-      </div>  
+  {/* Right Side */}
+  <div className="w-2/3 bg-blue-900 flex items-center justify-center pr-5">
+    {/* Use flex-row to align text + button horizontally */}
+    <div className="flex items-center space-x-10">
+      <p className="text-white text-7xl">Contact Us</p>
+      <button
+        className="flex items-center justify-center bg-black bg-opacity-70 text-white text-3xl hover:shadow-lg hover:scale-110 transition-transform duration-200 rounded-full h-16 w-16 z-50"
+      >
+        <IoIosArrowForward />
+      </button>
     </div>
+  </div>
+</div>
+
+<div className="flex">
+  <div className="w-1/2 flex h-48 bg-black justify-center items-center">
+    <img src={logoNoBackground} alt="Matt's Logo" className="w-auto h-40 filter invert"></img>
+  </div>
+
+  <div className="w-1/2 flex h-48 bg-black justify-center items-center">
+  <ul className="flex space-x-3">
+    {/* WhatsApp */}
+    <li>
+      <a 
+        href="https://wa.me/1234567890" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block"
+      >
+        <div className="h-16 w-16 p-1 overflow-hidden flex items-center justify-center rounded-full">
+          <img src={WhatsApp} alt="WhatsApp" className="h-full w-full object-cover" />
+        </div>
+      </a>
+    </li>
+
+    {/* Email */}
+    <li>
+      <a
+        href=""
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block"
+      >
+        <div className="h-16 w-16 p-1 overflow-hidden flex items-center justify-center rounded-full">
+          <img src={Email} alt="Email link" className="h-full w-full object-cover" />
+        </div>
+      </a>
+    </li>
+
+    {/* Instagram */}
+    <li>
+      <a
+        href=""
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block"
+      >
+        <div className="h-16 w-16 p-1 overflow-hidden flex items-center justify-center rounded-full">
+          <img src={Instagram} alt="Instagram link" className="h-full w-full object-cover" />
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+
     
     {/* <div>
       <ul className="w-1/2 flex flex-col justify-center items-end pr-4 space-y-4">

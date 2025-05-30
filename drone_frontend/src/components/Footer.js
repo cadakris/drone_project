@@ -11,7 +11,7 @@ function Footer() {
   <>
 <div className="flex items-stretch h-60">
   {/* Left Side */}
-  <div className="w-1/3 bg-blue-900 flex items-center justify-start pr-10">
+  <div className="w-1/3 bg-blue-900 flex items-center justify-start pl-24">
     <p className="text-white text-xl pl-20">
       SEEN <br />
       ENOUGH?
@@ -32,12 +32,12 @@ function Footer() {
   </div>
 </div>
 
-<div className="flex">
+<div className="flex bg-black">
   <div className="w-1/2 flex h-48 bg-black justify-center items-center">
     <img src={logoNoBackground} alt="Matt's Logo" className="w-auto h-40 filter invert"></img>
   </div>
 
-  <div className="w-1/2 flex h-48 bg-black justify-center items-center">
+  <div className="w-1/2 ml-[-35px] flex h-48 bg-black justify-center items-center">
   <ul className="flex space-x-3">
     {/* WhatsApp */}
     <li>
@@ -47,7 +47,7 @@ function Footer() {
         rel="noopener noreferrer"
         className="inline-block"
       >
-        <div className="h-16 w-16 p-1 overflow-hidden flex items-center justify-center rounded-full">
+        <div className="h-24 w-24 p-0.5 overflow-hidden flex items-center justify-center rounded-full">
           <img src={WhatsApp} alt="WhatsApp" className="h-full w-full object-cover" />
         </div>
       </a>
@@ -61,7 +61,7 @@ function Footer() {
         rel="noopener noreferrer"
         className="inline-block"
       >
-        <div className="h-16 w-16 p-1 overflow-hidden flex items-center justify-center rounded-full">
+        <div className="h-20 w-20 p-2.5 overflow-hidden flex items-center justify-center rounded-full">
           <img src={Email} alt="Email link" className="h-full w-full object-cover" />
         </div>
       </a>
@@ -75,7 +75,7 @@ function Footer() {
         rel="noopener noreferrer"
         className="inline-block"
       >
-        <div className="h-16 w-16 p-1 overflow-hidden flex items-center justify-center rounded-full">
+        <div className="h-20 w-20 p-0.5 overflow-hidden flex items-center justify-center rounded-full">
           <img src={Instagram} alt="Instagram link" className="h-full w-full object-cover" />
         </div>
       </a>

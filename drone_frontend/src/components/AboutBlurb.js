@@ -5,16 +5,14 @@ import React from 'react';
 function AboutBlurb() {
   return (
     <>
-      <div className="relative w-full h-auto bg-blue-900 p-6 md:p-10">
-        {/* Heading */}
-        <h1 className="text-white text-2xl md:text-4xl mb-4 pb-5">
-          Matt's Drone Services: Capturing the World from a New Perspective
+      <div className="w-full h-auto bg-[#384454] md:p-6">
+        <h1 className="text-[#317AC1] text-6xl text-center mb-6">
+        Aerial Drone Solutions
         </h1>
 
-        {/* Paragraph */}
-        <div className="relative">
-          <p className="text-white text-left md:text-right md:pl-[260px]">
-            Our drones provide breathtaking aerial views and precise data collection to help you see the bigger picture. Whether you're documenting special moments, surveying land, or showcasing your business, we deliver innovative solutions tailored to your needs, with a commitment to quality, creativity, and environmental consciousness.
+        <div className="mb-4">
+          <p className="text-white text-2xl tect-center px-24">
+             Capturing the action, ensuring precision: FPV drones for extreme sports, stabilized drones for inspection and photogrammetry.
           </p>
         </div>
       </div>

@@ -26,8 +26,8 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Hero scrollToFPV={scrollToFPV} scrollToSD={scrollToSD} />
       <AboutBlurb />
+      <Hero scrollToFPV={scrollToFPV} scrollToSD={scrollToSD} />
       <div ref={fpvRef}>
         <Portfolio title="FPV Gallery" filter="FPV" />
       </div>

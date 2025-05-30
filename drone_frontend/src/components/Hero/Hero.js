@@ -6,7 +6,7 @@ function Hero({ scrollToFPV, scrollToSD }) {
   const [hoveredSide, setHoveredSide] = useState(null); // "left", "right", or null
 
   return (
-    <div className="flex w-full h-[40vh]">
+    <div className="flex w-full h-[40vh] bg-[#384454]">
       <LeftContainer
         hoveredSide={hoveredSide}
         setHoveredSide={setHoveredSide}

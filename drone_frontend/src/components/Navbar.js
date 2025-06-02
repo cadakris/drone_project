@@ -17,12 +17,12 @@ function Navbar() {
     
     {/* LEFT MENU */}
     <div className="flex justify-center">
-      <ul className="flex space-x-20 items-center text-base md:text-xl lg:text-2xl">
-        <li className="flex items-center gap-2">
+      <ul className="flex items-center space-x-8 sm:space-x-8 md:space-x-16 lg:space-x-20 text-base md:text-xl lg:text-2xl">
+        <li className="flex items-center sm:gap-0 md:gap-1 lg:gap-2">
           <IoIosArrowForward/>
           <a href="#home" className="hover:text-gray-400">Home</a>
         </li>
-        <li className="flex items-center gap-2">
+        <li className="flex items-center sm:gap-0 md:gap-1 lg:gap-2">
           <IoIosArrowForward/>
           <a href="#contact" className="hover:text-gray-400">Contact</a>
         </li>
@@ -40,12 +40,12 @@ function Navbar() {
 
     {/* RIGHT MENU */}
     <div className="flex justify-center">
-      <ul className="flex space-x-20 items-center text-base md:text-xl lg:text-2xl">
-        <li className="flex items-center gap-2">
+      <ul className="flex items-center space-x-3 sm:space-x-8 md:space-x-16 lg:space-x-20 text-base md:text-xl lg:text-2xl">
+        <li className="flex items-center sm:gap-0 md:gap-1 lg:gap-2">
           <IoIosArrowForward/>
           <a href="#services" className="hover:text-gray-400">Services</a>
         </li>
-        <li className="flex items-center gap-2">
+        <li className="flex items-center sm:gap-0 md:gap-1 lg:gap-2">
           <IoIosArrowForward/>
           <a href="#gallery" className="hover:text-gray-400">Gallery</a>
         </li>

@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <nav className="bg-[#384454] text-white fixed top-0 left-0 w-full z-50">
       {/* Desktop Navbar */}
-      <div className="hidden md:grid grid-cols-3 items-center w-full max-w-7xl mx-auto py-4">
+      <div className="hidden md:grid grid-cols-3 items-center w-full max-w-7xl mx-auto py-2">
 
         {/* LEFT COLUMN */}
         <div className="flex justify-center">
@@ -29,7 +29,7 @@ function Navbar() {
           <img
             src={logoNoBackground}
             alt="Logo"
-            className="h-[clamp(5rem,12vw,10rem)] w-auto"
+            className="h-[clamp(5rem,11vw,9rem)] w-auto"
           />
         </div>
 
@@ -49,12 +49,12 @@ function Navbar() {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="flex justify-between items-center md:hidden p-4 relative">
+      <div className="flex justify-between items-center md:hidden p-6 relative mb-2">
         {/* Centered Logo */}
         <img
           src={logoNoBackground}
           alt="Logo"
-          className="h-24 w-auto absolute left-1/2 transform -translate-x-1/2 mt-6"
+          className="h-24 w-auto absolute left-1/2 transform -translate-x-1/2 mt-4"
         />
         
         {/* Hamburger Toggle */}

@@ -1,10 +1,11 @@
 import React from 'react';
 
 
+
 function AboutBlurb() {
   return (
-    <>
-      <div className="w-full h-auto bg-[#384454] p-4 md:p-6 pt-24 md:pt-4 lg:pt-52">
+    <section>
+      <div className="w-full h-auto bg-[#384454] p-4 md:p-6 pt-28 md:pt-44">
         <h1 className="text-[#317AC1] text-center mb-6 text-2xl md:text-4xl lg:text-6xl">
           Aerial Drone Solutions
         </h1>
@@ -15,7 +16,7 @@ function AboutBlurb() {
           </p>
         </div>
       </div>
-    </>
+    </section>
   );
 }
 

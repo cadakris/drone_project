@@ -14,7 +14,8 @@ const ProjectPosts = ({ post }) => {
   };
 
   return (
-    <div className="relative video-container p-4 bg-white overflow-hidden">
+    <section id="gallery">
+          <div className="relative video-container p-4 bg-white overflow-hidden">
       {/* Video Thumbnail with Play Button */}
       <div
         className="video-thumbnail relative cursor-pointer group"
@@ -56,6 +57,8 @@ const ProjectPosts = ({ post }) => {
         </div>
       )}
     </div>
+    </section>
+
   );
 };
 

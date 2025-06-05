@@ -31,9 +31,9 @@ const Portfolio = ({ title, filter }) => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="portfolio-container py-10 px-6">
+    <div className="portfolio-container bg-[#D4D3DC] py-10 px-6">
       {/* Styled Title */}
-      <h2 className="text-4xl font-extrabold text-center text-gray-800 border-b-4 border-indigo-500 inline-block pb-2 mb-10">
+      <h2 className="text-4xl font-extrabold text-center text-[#E1A624] border-b-4 border-[#384454] inline-block pb-2 mb-10">
         {title}
       </h2>
 

@@ -18,7 +18,7 @@ function AboutBlurb() {
         </div>
 
         <div className="flex justify-center p-2">
-          <button className="w-24 md:w-28 lg:w-36 h-12 md:h-12 lg:h-16 bg-[#ad956b] rounded-xl text-white text-base md:text-lg lg:text-xl hover:bg-pink-600">
+          <button className="w-24 md:w-28 lg:w-36 h-12 md:h-12 lg:h-16 bg-[#E1A624] drop-shadow-md rounded-xl text-white text-base md:text-lg lg:text-xl hover:bg-gray-400">
             Get Started
           </button>
         </div>

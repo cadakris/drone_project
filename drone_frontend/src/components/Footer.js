@@ -9,11 +9,11 @@ import { IoIosArrowForward } from "react-icons/io";
 function Footer() {
   return (
   <>
-  <div className="bg-[#384454] text-white flex flex-col md:flex-row md:items-center">
+  <div className="w-full bg-[#384454] py-12 px-8 space-y-12 md:space-y-16 lg:space-y-24 text-white">
     {/* {LEFT-CONTACT} */}
-    <div className="flex items-center justify-center gap-x-2">
-      <p className="text-white pr-12">SEEN <br/> ENOUGH?</p>
-      <p className="text-[#317AC1] gap-2 text-2xl md:text-4xl lg:text-7xl">Contact Us</p>
+    <div className="w-full flex flex-row items-center justify-center md:justify-start space-x-4">
+      <p className="text-white text-xl md:text-2xl font-semibold">SEEN <br/> ENOUGH?</p>
+      <p className="text-[#317AC1] gap-2 text-4xl lg:text-7xl">Contact Us</p>
       
       <button
         className="flex items-center justify-center 
@@ -28,31 +28,10 @@ function Footer() {
     </div>
 
     {/* {RIGHT-SOCIALS} */}
-    <div className="flex flex-col space-y-4 items-end mt-8 md:mt-0">
-
-    </div>
-
-
-  </div>
-{/* <div className="w-full h-auto bg-[#384454] mt-0 pt-8 pb-4 overflow-hidden">
-  <div className="flex space-x-10">
-    <p className="text-white pr-24">SEEN <br/> ENOUGH?</p>
-    <p className="text-[#317AC1] text-2xl md:text-4xl lg:text-7xl">Contact Us</p>
-    <button
-      className="flex items-center justify-center 
-      bg-[#E1A624] bg-opacity-70 text-white 
-      text-2xl md:text-3xl lg:text-4xl 
-      hover:shadow-lg hover:scale-110 transition-transform duration-200 
-      rounded-full 
-      w-8 h-8 md:w-10 md:h-10 lg:w-16 lg:h-16 z-50"
-    >
-      <IoIosArrowForward />
-    </button>
-  </div>
-  
-  <div className="flex items-center justify-center space-y-10 pb-8 space-x-12">
-    <p className="text-white pr-24">WANT <br/> MORE?</p>
-     <ul className="flex space-x-16">
+    <div className="w-full flex justify-center md:justify-end">
+      <div className="flex flex-row items-center justify-center md:justify-end space-x-4">
+         <p className="text-white text-xl md:text-2xl font-semibold text-center md:text-right">WANT <br/> MORE? </p>
+        <ul className="flex space-x-6">
       <li>
         <a 
           href="https://wa.me/1234567890" 
@@ -105,8 +84,9 @@ function Footer() {
         </a>
       </li>
     </ul>
-  </div>
-</div> */}
+      </div>
+    </div>  
+</div>
 
   </>
     

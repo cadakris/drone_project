@@ -19,7 +19,10 @@ function Navbar() {
             </li>
             <li className="flex items-center gap-2">
               <IoIosArrowForward />
-              <a href="#contact" className="hover:text-gray-400">Contact</a>
+              <a href="#contact" 
+                 className="hover:text-gray-400"
+                 
+                 >Contact</a>
             </li>
           </ul>
         </div>

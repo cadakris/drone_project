@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { IoIosArrowForward, IoIosMenu } from "react-icons/io"; // Hamburger Icon
 import logoNoBackground from '../images/logoNoBackground.png'; // Your logo image
+import ContactModal from './ContactModal'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
 
   return (
     <nav className="bg-[#384454] text-white fixed top-0 left-0 w-full z-50">
@@ -21,11 +23,20 @@ function Navbar() {
               <IoIosArrowForward />
               <a href="#contact" 
                  className="hover:text-gray-400"
-                 
+                 onClick ={(e) =>{
+                  e.preventDefault();
+                  setShowContactModal(true)
+                 }}
                  >Contact</a>
             </li>
           </ul>
         </div>
+
+        {/* CONTACT MODAL */}
+        {showContactModal && (
+          <ContactModal onClose={() => setShowContactModal(false)} />
+        )}
+    
 
         {/* CENTER COLUMN */}
         <div className="flex justify-center">

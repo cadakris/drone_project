@@ -9,6 +9,7 @@ djangorestframework = "*"
 django-cors-headers = "*"
 pillow = "*"
 python-decouple = "*"
+certifi = "*"
 
 [dev-packages]
 

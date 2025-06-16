@@ -137,7 +137,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # EMAIL CONFIGUURATION
-EMAIL_BACKEND = 'drone_backend.custom_email_backend.CustomEmailBackend'
+EMAIL_BACKEND = 'drone.custom_email_backend.CustomEmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

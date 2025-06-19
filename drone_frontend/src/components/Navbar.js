@@ -32,10 +32,7 @@ function Navbar() {
           </ul>
         </div>
 
-        {/* CONTACT MODAL */}
-        {showContactModal && (
-          <ContactModal onClose={() => setShowContactModal(false)} />
-        )}
+
     
 
         {/* CENTER COLUMN */}
@@ -90,7 +87,15 @@ function Navbar() {
             </li>
             <li className="flex items-center gap-2">
               <IoIosArrowForward />
-              <a href="#contact" className="hover:text-gray-400 text-2xl">Contact</a>
+              <a 
+                href="#contact" 
+                className="hover:text-gray-400 text-2xl"
+                 onClick={(e) => {
+                  e.preventDefault();
+                  setIsOpen(false);           
+                  setShowContactModal(true);  
+                }}
+                >Contact</a>
             </li>
             <li className="flex items-center gap-2">
               <IoIosArrowForward />
@@ -103,6 +108,11 @@ function Navbar() {
           </ul>
         </div>
       )}
+
+              {/* CONTACT MODAL */}
+        {showContactModal && (
+          <ContactModal onClose={() => setShowContactModal(false)} />
+        )}
     </nav>
   );
 }

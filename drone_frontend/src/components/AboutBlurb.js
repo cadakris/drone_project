@@ -1,8 +1,11 @@
-import React from 'react';
-
+import React, { useState } from "react";
+import ContactModal from './ContactModal'
 
 
 function AboutBlurb() {
+
+const [showContactModal, setShowContactModal] = useState(false);
+
   return (
     <section id="about">
       <div className="w-full h-auto bg-[#384454] p-6 md:p-6 pt-28 md:pt-44">
@@ -18,12 +21,27 @@ function AboutBlurb() {
         </div>
 
         <div className="flex justify-center p-2">
-          <button className="w-24 md:w-28 lg:w-36 h-12 md:h-12 lg:h-16 bg-[#E1A624] drop-shadow-md rounded-md text-white text-base md:text-lg lg:text-xl hover:bg-gray-400">
+          <button 
+            className="w-24 md:w-28 lg:w-36 h-12 md:h-12 lg:h-16 bg-[#E1A624] drop-shadow-md rounded- text-white text-base md:text-lg lg:text-xl hover:bg-gray-400"
+            onClick={(e)=>{
+              e.preventDefault();
+              setShowContactModal(true);
+            }}
+            >
+            
             Get Started
           </button>
         </div>
       </div>
+        
+        
+        {/* CONTACT MODAL */}
+        {showContactModal && (
+          <ContactModal onClose={() => setShowContactModal(false)} />
+        )}
     </section>
+
+    
   );
 }
 

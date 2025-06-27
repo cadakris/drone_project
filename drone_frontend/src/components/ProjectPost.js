@@ -15,7 +15,7 @@ const ProjectPosts = ({ post }) => {
 
   return (
     <section>
-          <div className="relative video-container p-4 bg-white overflow-hidden">
+          <div className="relative video-container p-4 overflow-hidden">
       {/* Video Thumbnail with Play Button */}
       <div
         className="video-thumbnail relative cursor-pointer group"
@@ -27,7 +27,7 @@ const ProjectPosts = ({ post }) => {
           muted
         />
         {/* Hover Title and Description */}
-        <div className="absolute inset-0 bg-black bg-opacity-70 text-white p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <h3 className="text-lg font-bold">{post.project_title}</h3>
           <p className="text-sm">{post.description}</p>
           <div className="flex justify-center p-6">

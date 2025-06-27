@@ -40,7 +40,7 @@ const Portfolio = ({ title, filter }) => {
         </h2>
 
         {/* Project Posts */}
-        <section className="portfolio grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section className="portfolio grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <ProjectPost key={post.id} post={post} />
           ))}

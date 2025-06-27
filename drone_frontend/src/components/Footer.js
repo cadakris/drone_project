@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import WhatsApp from '../images/WhatsApp.png';
 import Email2 from '../images/Email2.png';
 import Instagram from '../images/Instagram.png'
 import YouTube from '../images/YouTube.png'
 import logoNoBackground from '../images/logoNoBackground.png';
 import { IoIosArrowForward } from "react-icons/io";
+import ContactModal from './ContactModal'
 
 function Footer() {
+
+const [showContactModal, setShowContactModal] = useState(false);
+
   return (
   <>
   <div className="w-full bg-[#384454] py-12 px-8 space-y-12 md:space-y-16 lg:space-y-24 text-white">
@@ -22,6 +26,9 @@ function Footer() {
         hover:shadow-lg hover:scale-110 transition-transform duration-200 
         rounded-full 
         w-8 h-8 md:w-10 md:h-10 lg:w-16 lg:h-16"
+        onClick={(e)=>{e.preventDefault();
+          setShowContactModal(true);
+        }}
       >
         <IoIosArrowForward />
       </button>
@@ -34,7 +41,7 @@ function Footer() {
         <ul className="flex space-x-6">
       <li>
         <a 
-          href="https://wa.me/1234567890" 
+          href="https://wa.me/13474523910" 
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block"
@@ -85,7 +92,12 @@ function Footer() {
       </li>
     </ul>
       </div>
-    </div>  
+    </div>
+
+      {/* SHOW AND CLOSE CONTACT MODAL */}
+      {showContactModal && (
+        <ContactModal onClose={() => setShowContactModal(false)} />
+      )}
 </div>
 
   </>

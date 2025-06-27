@@ -14,7 +14,7 @@ const ProjectPosts = ({ post }) => {
   };
 
   return (
-    <section id="gallery">
+    <section>
           <div className="relative video-container p-4 bg-white overflow-hidden">
       {/* Video Thumbnail with Play Button */}
       <div

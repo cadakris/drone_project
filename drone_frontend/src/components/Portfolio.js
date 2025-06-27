@@ -31,19 +31,23 @@ const Portfolio = ({ title, filter }) => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="portfolio-container bg-[#D4D3DC] py-10 px-6">
-      {/* Styled Title */}
-      <h2 className="text-4xl font-extrabold text-center text-[#E1A624] border-b-4 border-[#384454] inline-block pb-2 mb-10">
-        {title}
-      </h2>
+    <section id="gallery" className="scroll-mt-32">
+      <div 
+        className="portfolio-container bg-[#D4D3DC] py-10 px-6">
+        {/* Styled Title */}
+        <h2 className="text-4xl font-extrabold text-center text-[#E1A624] border-b-4 border-[#384454] inline-block pb-2 mb-10">
+          {title}
+        </h2>
 
-      {/* Project Posts */}
-      <section className="portfolio grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <ProjectPost key={post.id} post={post} />
-        ))}
-      </section>
-    </div>
+        {/* Project Posts */}
+        <section className="portfolio grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <ProjectPost key={post.id} post={post} />
+          ))}
+        </section>
+      </div>
+    </section>
+
   );
 };
 

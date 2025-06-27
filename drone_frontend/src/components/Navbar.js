@@ -17,23 +17,17 @@ function Navbar() {
           <ul className="flex items-center space-x-8 md:space-x-16 lg:space-x-20 text-base md:text-xl lg:text-2xl">
             <li className="flex items-center gap-2">
               <IoIosArrowForward />
-              <a href="#home" className="hover:text-gray-400">Home</a>
+              <a href="#About" className="hover:text-gray-400">About</a>
             </li>
             <li className="flex items-center gap-2">
               <IoIosArrowForward />
-              <a href="#contact" 
-                 className="hover:text-gray-400"
-                 onClick ={(e) =>{
-                  e.preventDefault();
-                  setShowContactModal(true)
-                 }}
-                 >Contact</a>
+              <a href="#gallery" className="hover:text-gray-400 text-2xl">Gallery</a>
             </li>
           </ul>
         </div>
 
 
-    
+  
 
         {/* CENTER COLUMN */}
         <div className="flex justify-center">
@@ -53,7 +47,13 @@ function Navbar() {
             </li>
             <li className="flex items-center gap-2">
               <IoIosArrowForward />
-              <a href="#gallery" className="hover:text-gray-400">Gallery</a>
+              <a href="#contact" 
+                 className="hover:text-gray-400"
+                 onClick ={(e) =>{
+                  e.preventDefault();
+                  setShowContactModal(true)
+                 }}
+                 >Contact</a>
             </li>
           </ul>
         </div>
@@ -100,10 +100,6 @@ function Navbar() {
             <li className="flex items-center gap-2">
               <IoIosArrowForward />
               <a href="#services" className="hover:text-gray-400 text-2xl">Services</a>
-            </li>
-            <li className="flex items-center gap-2">
-              <IoIosArrowForward />
-              <a href="#gallery" className="hover:text-gray-400 text-2xl">Gallery</a>
             </li>
           </ul>
         </div>

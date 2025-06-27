@@ -21,7 +21,7 @@ function Footer() {
         text-2xl md:text-3xl lg:text-4xl 
         hover:shadow-lg hover:scale-110 transition-transform duration-200 
         rounded-full 
-        w-8 h-8 md:w-10 md:h-10 lg:w-16 lg:h-16 z-50"
+        w-8 h-8 md:w-10 md:h-10 lg:w-16 lg:h-16"
       >
         <IoIosArrowForward />
       </button>

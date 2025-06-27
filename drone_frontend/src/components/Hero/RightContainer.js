@@ -8,15 +8,16 @@ function RightContainer({ hoveredSide, setHoveredSide, scrollToSection, widthCla
 
   const secondVideo = videoData[1];
 
-  const handleMouseEnter = () => {
-    setHoveredSide("right");
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-    timerRef.current = setTimeout(() => {
-      setDescFullyRevealed(true);
-    }, 700); // Reveal description after 1 second
-  };
+const handleMouseEnter = () => {
+  if (window.innerWidth < 768) return;
+  setHoveredSide("right");
+  if (videoRef.current) {
+    videoRef.current.play();
+  }
+  timerRef.current = setTimeout(() => {
+    setDescFullyRevealed(true);
+  }, 700);
+};
 
   const handleMouseLeave = () => {
     setHoveredSide(null);
@@ -32,27 +33,36 @@ function RightContainer({ hoveredSide, setHoveredSide, scrollToSection, widthCla
   };
 
   return (
-<div
+    <div
   className={`relative h-1/2 md:h-full transition-all duration-500 overflow-hidden ${widthClass} bg-black`}
   onMouseEnter={handleMouseEnter}
   onMouseLeave={handleMouseLeave}
   onClick={scrollToSection}
 >
-      <video
-        ref={videoRef}
-        src={secondVideo.mediaUrl}
-        loop
-        muted
-        className="w-full h-full object-cover"
-      />
-<div
-  className={`absolute top-[36%] left-[28%] -translate-x-1/2 text-white transition-opacity duration-500 cursor-pointer`}
-  style={{ mixBlendMode: "difference" }}
->
-  <div className="relative">
-    <h1 className="text-5xl font-bold leading-none">Stabilized Drone</h1>
+  {/* Static image on small screens */}
+  <img
+    src={secondVideo.imageUrl}  // replace with your static image path
+    alt={secondVideo.title}
+    className="w-full h-full object-cover md:hidden"
+  />
+
+  {/* Video on md+ screens */}
+  <video
+    ref={videoRef}
+    src={secondVideo.mediaUrl}
+    loop
+    muted
+    className="hidden md:block w-full h-full object-cover"
+  />
+
+<div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-white text-center transition-opacity duration-500 cursor-pointer px-4"
+     style={{ mixBlendMode: "difference" }}>
+  <div className="relative max-w-[90%]">
+    <h1 className="text-3xl md:text-5xl font-bold leading-tight mt-1">
+      Stabilized Drone
+    </h1>
     <p
-      className={`text-base mt-3 transition-opacity duration-200 ${
+      className={`text-sm md:text-base mt-3 transition-opacity duration-200 ${
         descFullyRevealed ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -60,7 +70,7 @@ function RightContainer({ hoveredSide, setHoveredSide, scrollToSection, widthCla
     </p>
   </div>
 </div>
-    </div>
+</div>
   );
 }
 

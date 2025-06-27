@@ -1,19 +1,12 @@
 import React, { useRef, useState } from "react";
 import { videoData } from "./MediaData";
 
-function RightContainer({ hoveredSide, setHoveredSide, scrollToSection }) {
+function RightContainer({ hoveredSide, setHoveredSide, scrollToSection, widthClass }) {
   const videoRef = useRef(null);
   const timerRef = useRef(null);
   const [descFullyRevealed, setDescFullyRevealed] = useState(false);
 
   const secondVideo = videoData[1];
-
-  let widthClass = "w-1/2";
-  if (hoveredSide === "right") {
-    widthClass = "w-[80%]";
-  } else if (hoveredSide === "left") {
-    widthClass = "w-[20%]";
-  }
 
   const handleMouseEnter = () => {
     setHoveredSide("right");
@@ -39,12 +32,12 @@ function RightContainer({ hoveredSide, setHoveredSide, scrollToSection }) {
   };
 
   return (
-    <div
-      className={`relative h-full transition-all duration-500 overflow-hidden ${widthClass} bg-gray-800`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onClick={scrollToSection}
-    >
+<div
+  className={`relative h-1/2 md:h-full transition-all duration-500 overflow-hidden ${widthClass} bg-black`}
+  onMouseEnter={handleMouseEnter}
+  onMouseLeave={handleMouseLeave}
+  onClick={scrollToSection}
+>
       <video
         ref={videoRef}
         src={secondVideo.mediaUrl}

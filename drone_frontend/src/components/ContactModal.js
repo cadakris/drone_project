@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import WhatsApp from '../images/WhatsApp.png';
 import Email2 from '../images/Email2.png';
-import Instagram from '../images/Instagram.png'
-import YouTube from '../images/YouTube.png'
-import { IoIosArrowForward } from "react-icons/io";
+import Instagram from '../images/Instagram.png';
+import YouTube from '../images/YouTube.png';
 
 function ContactModal({ onClose }) {
-
-    useEffect(() => {
+  useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = 'auto';
@@ -15,12 +13,12 @@ function ContactModal({ onClose }) {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto">
       {/* Background Layer */}
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm sm:block hidden" />
 
-      {/* MOBILE: Fullscreen White Form */}
-      <div className="sm:hidden relative z-50 w-full h-full bg-[#384454] flex flex-col p-6">
+      {/* MOBILE: Fullscreen stacked modal */}
+      <div className="sm:hidden relative z-50 w-full h-full bg-[#384454] flex flex-col p-6 overflow-y-auto">
         {/* Close Button */}
         <button
           className="absolute top-4 right-4 text-3xl font-bold text-white"
@@ -29,7 +27,41 @@ function ContactModal({ onClose }) {
           &times;
         </button>
 
-        <h2 className="text-[#317AC1] text-center text-3xl font-semibold mt-16 mb-4">Tell Us About Your Project!</h2>
+        {/* Contacts info */}
+        <h2 className="text-white text-center text-3xl font-semibold mt-16 mb-6">
+          Contact Info
+        </h2>
+
+        <div className="flex flex-col gap-4 text-white">
+          <div className="flex items-start gap-4">
+            <span className="text-2xl">📍</span>
+            <div>
+              <p className="font-bold uppercase">Location</p>
+              <p>Brest, France</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <span className="text-2xl">📧</span>
+            <div>
+              <p className="font-bold uppercase">Email</p>
+              <p>drone@gmail.com</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <span className="text-2xl">📞</span>
+            <div>
+              <p className="font-bold uppercase">Phone</p>
+              <p>Coming Soon</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Message Form */}
+        <h2 className="text-[#317AC1] text-center text-3xl font-semibold mt-10 mb-4">
+          Tell Us About Your Project!
+        </h2>
 
         <form className="flex flex-col gap-6 flex-1">
           <input
@@ -57,10 +89,34 @@ function ContactModal({ onClose }) {
             Send Message
           </button>
         </form>
+
+        {/* Social Links */}
+        <div className="flex justify-center gap-4 mt-8">
+          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+            <div className="h-12 w-12 rounded-full overflow-hidden">
+              <img src={WhatsApp} alt="WhatsApp" className="h-full w-full object-cover" />
+            </div>
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <div className="h-12 w-12 rounded-full overflow-hidden">
+              <img src={Email2} alt="Email link" className="h-full w-full object-cover" />
+            </div>
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <div className="h-12 w-12 rounded-full overflow-hidden">
+              <img src={Instagram} alt="Instagram link" className="h-full w-full object-cover" />
+            </div>
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <div className="h-12 w-12 rounded-full overflow-hidden">
+              <img src={YouTube} alt="YouTube link" className="h-full w-full object-cover" />
+            </div>
+          </a>
+        </div>
       </div>
 
-      {/* DESKTOP: Centered Modal */}
-      <div className="hidden sm:flex relative z-50 w-full max-w-md bg-white/95 rounded-sm p-8 shadow-2xl">
+      {/* DESKTOP: Two-column modal */}
+      <div className="hidden sm:flex relative z-50 w-full max-w-3xl bg-white/95 rounded-sm p-8 shadow-2xl gap-8">
         {/* Close Button */}
         <button
           className="absolute top-4 right-4 text-3xl font-bold text-black"
@@ -69,8 +125,11 @@ function ContactModal({ onClose }) {
           &times;
         </button>
 
-        <div className="w-full">
-          <h2 className="text-[#317AC1] text-center text-2xl font-semibold mb-4">Tell Us About Your Project!</h2>
+        {/* Left column: Form */}
+        <div className="w-1/2">
+          <h2 className="text-[#317AC1] text-2xl font-semibold mb-4 text-center">
+            Tell Us About Your Project!
+          </h2>
           <form className="flex flex-col gap-7">
             <input
               type="text"
@@ -96,57 +155,60 @@ function ContactModal({ onClose }) {
             >
               Send Message
             </button>
-                    <div className="flex justify-center gap-6 mt-6 text-xl text-[#384454">
-        <a 
-          href="https://wa.me/1234567890" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block"
-        >
-          <div className="h-12 w-12 md:h-16 md:w-16 rounded-full">
-            <img src={WhatsApp} alt="WhatsApp" className="h-full w-full object-cover" />
-          </div>
-        </a>
-
-        <a
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block"
-        >
-          <div className="h-12 w-12 md:h-16 md:w-16 overflow-hidden rounded-full">
-            <img src={Email2} alt="Email link" className="h-full w-full object-cover" />
-          </div>
-        </a>
-        
-
-        <a
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block"
-
-        >
-          <div className="h-12 w-12 md:h-16 md:w-16 overflow-hidden  rounded-full">
-            <img src={Instagram} alt="Instagram link" className="h-full w-full object-cover" />
-          </div>
-        </a>
-
-        <a
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block"
-        >
-          <div className="h-12 w-12 md:h-16 md:w-16 overflow-hidden rounded-full">
-            <img src={YouTube} alt="YouTube Link" className="h-full w-full object-cover" />
-          </div>
-        </a>
-        </div>
           </form>
         </div>
 
-        {/* SOCIAL MEDIA LINKS */}
+        {/* Right column: Contact details */}
+        <div className="w-1/2 ml- flex flex-col justify-center gap-6 text-[#384454]">
+          <h2 className="text-2xl font-bold mb-2">Contacts</h2>
+
+          <div className="flex items-start gap-4">
+            <span className="text-2xl">📍</span>
+            <div>
+              <p className="font-bold uppercase">Location</p>
+              <p>Brest, France</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <span className="text-2xl">📧</span>
+            <div>
+              <p className="font-bold uppercase">Email</p>
+              <p>drone@gmail.com</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <span className="text-2xl">📞</span>
+            <div>
+              <p className="font-bold uppercase">Phone</p>
+              <p>Coming Soon</p>
+            </div>
+          </div>
+
+          <div className="flex justify-start gap-4 mt-4">
+            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+              <div className="h-10 w-10 md:h-12 md:w-12 rounded-full overflow-hidden">
+                <img src={WhatsApp} alt="WhatsApp" className="h-full w-full object-cover" />
+              </div>
+            </a>
+            <a href="" target="_blank" rel="noopener noreferrer">
+              <div className="h-10 w-10 md:h-12 md:w-12 rounded-full overflow-hidden">
+                <img src={Email2} alt="Email link" className="h-full w-full object-cover" />
+              </div>
+            </a>
+            <a href="" target="_blank" rel="noopener noreferrer">
+              <div className="h-10 w-10 md:h-12 md:w-12 rounded-full overflow-hidden">
+                <img src={Instagram} alt="Instagram link" className="h-full w-full object-cover" />
+              </div>
+            </a>
+            <a href="" target="_blank" rel="noopener noreferrer">
+              <div className="h-10 w-10 md:h-12 md:w-12 rounded-full overflow-hidden">
+                <img src={YouTube} alt="YouTube link" className="h-full w-full object-cover" />
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

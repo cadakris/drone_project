@@ -26,9 +26,6 @@ function Navbar() {
           </ul>
         </div>
 
-
-  
-
         {/* CENTER COLUMN */}
         <div className="flex justify-center">
           <img

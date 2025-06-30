@@ -15,6 +15,15 @@ const [showContactModal, setShowContactModal] = useState(false);
 
         <div className="mb-4">
           <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl text-center px-4 sm:px-12 md:px-24">
+                Our mission is simple: deliver stunning aerial visuals with precision, reliability, and creativity. 
+          </p> <br/>
+
+          <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl text-center px-4 sm:px-12 md:px-24">
+            Whether it’s high-speed FPV footage or smooth stabilized shots, we bring unique perspectives
+            to every project — helping you stand out with cinematic quality.
+          </p> <br/>
+
+          <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl text-center px-4 sm:px-12 md:px-24">
             Capturing the action, ensuring precision: FPV drones for extreme sports, stabilized drones for inspection and photogrammetry.
           </p>
 

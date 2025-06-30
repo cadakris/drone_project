@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ProjectPost from "./ProjectPost";
 
-const Portfolio = ({ title, filter }) => {
+const Portfolio = ({ title, filter, fpvRef, sdRef }) => {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(null);
 
@@ -31,9 +31,7 @@ const Portfolio = ({ title, filter }) => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <section id="gallery" className="scroll-mt-32">
-      <div 
-        className="portfolio-container bg-[#D4D3DC] py-10 px-6">
+      <div ref={filter === "FPV" ? fpvRef : filter === "SD" ? sdRef : null} className="portfolio-container bg-[#D4D3DC] py-10 px-6">
         {/* Styled Title */}
         <h2 className="text-4xl font-extrabold text-center text-[#E1A624] border-b-4 border-[#384454] inline-block pb-2 mb-10">
           {title}
@@ -46,7 +44,7 @@ const Portfolio = ({ title, filter }) => {
           ))}
         </section>
       </div>
-    </section>
+
 
   );
 };

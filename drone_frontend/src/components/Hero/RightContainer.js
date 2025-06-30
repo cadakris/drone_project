@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { videoData } from "./MediaData";
 
-function RightContainer({ hoveredSide, setHoveredSide, scrollToSection, widthClass }) {
+function RightContainer({ hoveredSide, setHoveredSide, scrollToSection, widthClass, sdRef }) {
   const videoRef = useRef(null);
   const timerRef = useRef(null);
   const [descFullyRevealed, setDescFullyRevealed] = useState(false);
@@ -57,12 +57,19 @@ const handleMouseEnter = () => {
 
 <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-white text-center transition-opacity duration-500 cursor-pointer px-4"
      style={{ mixBlendMode: "difference" }}>
-  <div className="relative max-w-[90%]">
+  <div className="relative max-w-[90%]" ref={sdRef}>
     <h1 className="text-3xl md:text-5xl font-bold leading-tight mt-1">
       Stabilized Drone
     </h1>
+
     <p
-      className={`text-sm md:text-base mt-3 transition-opacity duration-200 ${
+      className={'text-sm mt-3 md:hidden'}
+    >
+      Discover stunning stabilized drone visuals!
+    </p>
+    
+    <p
+      className={`text-base mt-3 hidden md:block transition-opacity duration-200 ${
         descFullyRevealed ? "opacity-100" : "opacity-0"
       }`}
     >

@@ -58,12 +58,17 @@ const handleMouseEnter = () => {
 
 <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-white text-center transition-opacity duration-500 cursor-pointer px-4"
      style={{ mixBlendMode: "difference" }}>
-  <div className="relative max-w-[90%]">
+  <div className="relative max-w-[90%] scroll-mt-20">
     <h1 className="text-3xl md:text-5xl font-bold leading-tight mt-1">
       FPV
     </h1>
     <p
-      className={`text-sm md:text-base mt-3 transition-opacity duration-200 ${
+      className={'text-sm mt-3 md:hidden'}
+    > Experience the thrill of immersive FPV drone flights, capturing the world from dynamic angles.
+
+    </p>
+    <p
+      className={`text-base mt-3 hidden md:block transition-opacity duration-200 ${
         descFullyRevealed ? "opacity-100" : "opacity-0"
       }`}
     >

@@ -23,7 +23,7 @@ const [showContactModal, setShowContactModal] = useState(false);
                 <div className="className="bg-white shadow-md rounded-lg overflow-hidden>
                     <img className="w-full h-48 object-cover" src={firstServiceImage.servicesImage} alt="Card 1" />
                         <div className="p-4">
-                        <h2 className="text-xl font-semibold mb-2">FPV Drone</h2>
+                        <h2 className="text-xl text-[#E1A624] font-semibold mb-2">FPV Drone</h2>
                         <p className="text-white">For precise and immersive shots, nothing matches the stunning 4K footage captured by our FPV drones  .</p>
                     </div> 
                 </div>
@@ -34,7 +34,7 @@ const [showContactModal, setShowContactModal] = useState(false);
                 <div className="className="bg-white shadow-md rounded-lg overflow-hidden>
                     <img className="w-full h-48 object-cover" src={secondServiceImage.servicesImage} alt="Card 1" />
                         <div className="p-4">
-                        <h2 className="text-xl font-semibold mb-2">Surveying & Mapping</h2>
+                        <h2 className="text-xl text-[#E1A624] font-semibold mb-2">Surveying & Mapping</h2>
                         <p className="text-white">Accurate topographic data collection.</p>
                     </div> 
                 </div>
@@ -44,8 +44,8 @@ const [showContactModal, setShowContactModal] = useState(false);
                 <div className="className="bg-white shadow-md rounded-lg overflow-hidden>
                     <img className="w-full h-48 object-cover" src={thirdServiceImage.servicesImage} alt="Card 3" />
                         <div className="p-4">
-                        <h2 className="text-xl font-semibold mb-2">Full Service Production</h2>
-                        <p className="text-white">Comprehensive production services from concept to final delivery — we manage every step with precision and creativity to bring your vision to life..</p>
+                        <h2 className="text-xl text-[#E1A624] font-semibold mb-2">Full Service Production</h2>
+                        <p className="text-white">Full-service production from concept to delivery — we handle every step with precision and creativity.</p>
                     </div> 
                 </div>
             </div>

@@ -1,74 +1,83 @@
-import React, { useState } from 'react'
-import ContactModal from './ContactModal'
-import { serviceData } from './GeneralMediaData'
-
-
-const firstServiceImage = serviceData[0];
-const secondServiceImage = serviceData[1];
-const thirdServiceImage = serviceData[2];
-
+import React, { useState } from "react";
+import ContactModal from "./ContactModal";
+import { serviceData } from "./GeneralMediaData";
+import { CheckCircle } from "lucide-react"; // Or swap with any icon you use
 
 export default function Services() {
-
-const [showContactModal, setShowContactModal] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
 
   return (
-    <div className="bg-[#384454]" >
-        <h1 className="text-[#317AC1] text-center mb-6 text-xl md:text-2xl lg:text-4xl">
-          Our Services
-        </h1>
-        <div className="flex flex-wrap justify-center">
-            {/* card 1 */}
-            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 text-white">
-                <div className="className="bg-white shadow-md rounded-lg overflow-hidden>
-                    <img className="w-full h-48 object-cover" src={firstServiceImage.servicesImage} alt="Card 1" />
-                        <div className="p-4">
-                        <h2 className="text-xl text-[#E1A624] font-semibold mb-2">FPV Drone</h2>
-                        <p className="text-white">For precise and immersive shots, nothing matches the stunning 4K footage captured by our FPV drones  .</p>
-                    </div> 
-                </div>
-            </div>
-
-            {/* card 2 */}
-                    <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-                <div className="className="bg-white shadow-md rounded-lg overflow-hidden>
-                    <img className="w-full h-48 object-cover" src={secondServiceImage.servicesImage} alt="Card 1" />
-                        <div className="p-4">
-                        <h2 className="text-xl text-[#E1A624] font-semibold mb-2">Surveying & Mapping</h2>
-                        <p className="text-white">Accurate topographic data collection.</p>
-                    </div> 
-                </div>
-            </div>
-                    {/* card 3 */}
-            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-                <div className="className="bg-white shadow-md rounded-lg overflow-hidden>
-                    <img className="w-full h-48 object-cover" src={thirdServiceImage.servicesImage} alt="Card 3" />
-                        <div className="p-4">
-                        <h2 className="text-xl text-[#E1A624] font-semibold mb-2">Full Service Production</h2>
-                        <p className="text-white">Full-service production from concept to delivery — we handle every step with precision and creativity.</p>
-                    </div> 
-                </div>
-            </div>
-        </div>
-                <div className="flex justify-center p-2">
-          <button 
-            className="w-24 md:w-28 lg:w-36 h-12 md:h-12 lg:h-16 bg-[#E1A624] drop-shadow-md rounded- text-white text-base md:text-lg lg:text-xl hover:bg-gray-400"
-            onClick={(e)=>{
-              e.preventDefault();
-              setShowContactModal(true);
-            }}
-            >
-            
-            Get Started
-          </button>
+    <div className="bg-[#384454]">
+      {/* Mobile: Hero image + list */}
+      <div className="block md:hidden">
+        <div className="relative w-full h-60">
+          <img
+            src={serviceData[0].servicesImage} 
+            alt="Our Services"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+            <h1 className="text-white text-2xl font-bold">Our Services</h1>
+          </div>
         </div>
 
-                {/* CONTACT MODAL */}
-        {showContactModal && (
-          <ContactModal onClose={() => setShowContactModal(false)} />
-        )}
+        <ul className="flex flex-col gap-4 p-6 pt-6">
+          {serviceData.map((service, index) => (
+            <li key={index} className="flex items-start gap-4">
+              <CheckCircle className="text-[#E1A624] w-6 h-6 flex-shrink-0" />
+              <div>
+                <h2 className="text-white text-lg font-semibold">
+                  {service.title}
+                </h2>
+                <p className="text-white text-sm">{service.description}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
 
+      {/* Desktop: Grid cards */}
+      <div className="hidden md:flex flex-wrap justify-center gap-4">
+        {serviceData.map((service, index) => (
+          <div
+            key={index}
+            className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 text-white"
+          >
+            <div className="bg-white shadow-md overflow-hidden">
+              <img
+                className="w-full h-48 object-cover"
+                src={service.servicesImage}
+                alt={service.title}
+              />
+              <div className="p-4 bg-[#384454] h-60 flex flex-col">
+                <h2 className="text-xl text-[#E1A624] font-semibold mb-2">
+                  {service.title}
+                </h2>
+                <p className="text-white text-sm md:text-lg">
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex justify-center p-4 pb-8">
+        <button
+          className="w-36 h-12 bg-[#E1A624] drop-shadow-md rounded text-white text-base md:text-lg hover:bg-gray-400"
+          onClick={(e) => {
+            e.preventDefault();
+            setShowContactModal(true);
+          }}
+        >
+          Get Started
+        </button>
+      </div>
+
+      {/* Contact Modal */}
+      {showContactModal && (
+        <ContactModal onClose={() => setShowContactModal(false)} />
+      )}
     </div>
-
-  )
+  );
 }

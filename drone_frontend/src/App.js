@@ -5,6 +5,7 @@ import Hero from "./components/Hero/Hero";
 import AboutBlurb from './components/AboutBlurb';
 import Portfolio from './components/Portfolio';
 import Footer from './components/Footer';
+import Services from './components/Services';
 
 function App() {
   const fpvRef = useRef(null); // Reference for FPV section
@@ -41,11 +42,12 @@ const scrollToSD = () => {
         fpvRef={fpvRef}
         navbarRef={navbarRef}
       />
-      <AboutBlurb />
       <Hero 
         scrollToFPV={scrollToFPV} 
         scrollToSD={scrollToSD} 
       />
+      <AboutBlurb />
+      <Services/>
       <Portfolio 
         title="FPV Gallery" 
         filter="FPV"

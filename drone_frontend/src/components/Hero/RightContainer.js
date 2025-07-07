@@ -34,16 +34,16 @@ const handleMouseEnter = () => {
 
   return (
     <div
-  className={`relative h-1/2 md:h-full transition-all duration-500 overflow-hidden ${widthClass} bg-black`}
+  className={`relative w-full h-1/2 md:h-full transition-all duration-500 overflow-hidden ${widthClass} bg-black`}
   onMouseEnter={handleMouseEnter}
   onMouseLeave={handleMouseLeave}
   onClick={scrollToSection}
 >
   {/* Static image on small screens */}
   <img
-    src={secondVideo.imageUrl}  // replace with your static image path
+    src={secondVideo.imageUrl}
     alt={secondVideo.title}
-    className="w-full h-full object-cover md:hidden"
+    className="w-full h-full object-cover"
   />
 
   {/* Video on md+ screens */}
@@ -55,28 +55,32 @@ const handleMouseEnter = () => {
     className="hidden md:block w-full h-full object-cover"
   />
 
-<div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-white text-center transition-opacity duration-500 cursor-pointer px-4"
-     style={{ mixBlendMode: "difference" }}>
-  <div className="relative max-w-[90%]" ref={sdRef}>
-    <h1 className="text-3xl md:text-5xl font-bold leading-tight mt-1">
+  <div
+    className="block md:hidden absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4"
+    style={{ mixBlendMode: "difference" }}
+  >
+    <h1 className="text-3xl font-bold leading-tight mt-1">
       Stabilized Drone
     </h1>
-
-    <p
-      className={'text-sm mt-3 md:hidden'}
-    >
-      Discover stunning stabilized drone visuals!
-    </p>
-    
-    <p
-      className={`text-base mt-3 hidden md:block transition-opacity duration-200 ${
-        descFullyRevealed ? "opacity-100" : "opacity-0"
-      }`}
-    >
-      Discover stunning stabilized drone visuals!
+    <p className="text-base mt-3">
+      Discover stunning stablized drone visuals
     </p>
   </div>
-</div>
+
+  {/* Big screen text */}
+  <div
+    className="hidden md:block absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-white text-center transition-opacity duration-500 cursor-pointer px-4"
+    style={{ mixBlendMode: "difference" }}
+  >
+    <div className="relative max-w-[90%] scroll-mt-20">
+      <h1 className="text-5xl font-bold leading-tight mt-1">
+        Stabilized Drone
+      </h1>
+      <p className={`text-base mt-3 transition-opacity duration-200 ${descFullyRevealed ? "opacity-100" : "opacity-0"}`}>
+        Discover stunning stablized drone visuals
+      </p>
+    </div>
+  </div>
 </div>
   );
 }

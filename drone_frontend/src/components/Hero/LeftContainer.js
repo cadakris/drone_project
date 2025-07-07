@@ -41,8 +41,8 @@ const handleMouseEnter = () => {
   onClick={scrollToSection}
 >
   {/* Static image on small screens */}
-  <img
-    src={firstVideo.imageUrl}  
+<img
+    src={firstVideo.imageUrl}
     alt={firstVideo.title}
     className="w-full h-full object-cover md:hidden"
   />
@@ -56,26 +56,33 @@ const handleMouseEnter = () => {
     className="hidden md:block w-full h-full object-cover"
   />
 
-<div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-white text-center transition-opacity duration-500 cursor-pointer px-4"
-     style={{ mixBlendMode: "difference" }}>
-  <div className="relative max-w-[90%] scroll-mt-20">
-    <h1 className="text-3xl md:text-5xl font-bold leading-tight mt-1">
+  {/* Small screen text */}
+  <div
+    className="block md:hidden absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4"
+    style={{ mixBlendMode: "difference" }}
+  >
+    <h1 className="text-3xl font-bold leading-tight mt-1">
       FPV
     </h1>
-    <p
-      className={'text-sm mt-3 md:hidden'}
-    > Experience the thrill of immersive FPV drone flights, capturing the world from dynamic angles.
-
-    </p>
-    <p
-      className={`text-base mt-3 hidden md:block transition-opacity duration-200 ${
-        descFullyRevealed ? "opacity-100" : "opacity-0"
-      }`}
-    >
+    <p className="text-base mt-3">
       Experience the thrill of immersive FPV drone flights, capturing the world from dynamic angles.
     </p>
   </div>
-</div>
+
+  {/* Big screen text */}
+  <div
+    className="hidden md:block absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-white text-center transition-opacity duration-500 cursor-pointer px-4"
+    style={{ mixBlendMode: "difference" }}
+  >
+    <div className="relative max-w-[90%] scroll-mt-20">
+      <h1 className="text-5xl font-bold leading-tight mt-1">
+        FPV
+      </h1>
+      <p className={`text-base mt-3 transition-opacity duration-200 ${descFullyRevealed ? "opacity-100" : "opacity-0"}`}>
+        Experience the thrill of immersive FPV drone flights, capturing the world from dynamic angles.
+      </p>
+    </div>
+  </div>
 </div>
   );
 }

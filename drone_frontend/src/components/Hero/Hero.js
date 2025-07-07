@@ -18,7 +18,7 @@ if (hoveredSide === "left") {
 }
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-[80vh] bg-[#384454]">
+    <div className="flex flex-col md:flex-row w-full md:h-[80vh] bg-[#384454]">
       <LeftContainer
         hoveredSide={hoveredSide}
         setHoveredSide={setHoveredSide}

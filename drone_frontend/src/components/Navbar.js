@@ -3,7 +3,7 @@ import { IoIosArrowForward, IoIosMenu } from "react-icons/io"; // Hamburger Icon
 import logoNoBackground from '../images/logoNoBackground.png'; // Your logo image
 import ContactModal from './ContactModal'
 
-function Navbar({scrollToGallery, navbarRef}) {
+function Navbar({scrollToGallery, scrollToAbout, navbarRef}) {
   const [isOpen, setIsOpen] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
 
@@ -18,7 +18,12 @@ function Navbar({scrollToGallery, navbarRef}) {
           <ul className="flex items-center space-x-8 md:space-x-16 lg:space-x-20 text-base md:text-xl lg:text-2xl">
             <li className="flex items-center gap-2 hover:text-gray-400">
               <IoIosArrowForward />
-              <a href="#About">About</a>
+              <a href="#About"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToAbout();
+                }}
+              >About</a>
             </li>
             <li className="flex items-center gap-2 hover:text-gray-400">
               <IoIosArrowForward />

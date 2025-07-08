@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LeftContainer from "./LeftContainer";
 import RightContainer from "./RightContainer";
 
-function Hero({ scrollToFPV, scrollToSD }) {
+function Hero({ scrollToSection, fpvRef, sdRef }) {
 const [hoveredSide, setHoveredSide] = useState(null); // "left", "right", or null
 
 
@@ -22,13 +22,13 @@ if (hoveredSide === "left") {
       <LeftContainer
         hoveredSide={hoveredSide}
         setHoveredSide={setHoveredSide}
-        scrollToSection={scrollToFPV}
+        scrollToFPV={() => scrollToSection(fpvRef)}
         widthClass={leftWidth}    // 🚨 pass computed width
       />
       <RightContainer
         hoveredSide={hoveredSide}
         setHoveredSide={setHoveredSide}
-        scrollToSection={scrollToSD}
+        scrollToStabilized={scrollToSection}
         widthClass={rightWidth}   // 🚨 pass computed width
       />
     </div>

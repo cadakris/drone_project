@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { videoData } from "./MediaData";
 
-function LeftContainer({ hoveredSide, setHoveredSide, scrollToSection, widthClass  }) {
+function LeftContainer({ hoveredSide, setHoveredSide, scrollToFPV, widthClass  }) {
   const videoRef = useRef(null);
   const timerRef = useRef(null);
   const [descFullyRevealed, setDescFullyRevealed] = useState(false);
@@ -35,10 +35,10 @@ const handleMouseEnter = () => {
 
   return (
 <div
-  className={`relative h-1/2 md:h-full transition-all duration-500 overflow-hidden ${widthClass} bg-black`}
+  className={`relative w-full h-1/2 md:h-full transition-all duration-500 overflow-hidden ${widthClass} bg-black`}
   onMouseEnter={handleMouseEnter}
   onMouseLeave={handleMouseLeave}
-  onClick={scrollToSection}
+  onClick={scrollToFPV}
 >
   {/* Static image on small screens */}
 <img

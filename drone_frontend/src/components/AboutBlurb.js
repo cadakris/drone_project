@@ -1,8 +1,8 @@
 import React from "react";
 
-function AboutBlurb() {
+function AboutBlurb({aboutRef}) {
   return (
-    <section id="about">
+    <section ref={aboutRef}>
       <div className="w-full h-auto bg-[#384454] p-6 pt-8">
         <h1 className="text-[#317AC1] text-center mb-6 text-2xl md:text-4xl lg:text-6xl">
           Aerial Drone Solutions

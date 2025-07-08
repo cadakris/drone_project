@@ -11,42 +11,38 @@ function App() {
   const fpvRef = useRef(null); // Reference for FPV section
   const sdRef = useRef(null); // Reference for Drone section
   const navbarRef = useRef(null);
+  const aboutRef = useRef(null);
 
-  // Functions to scroll to the respective sections
-const scrollToFPV = () => {
-  if (fpvRef.current && navbarRef.current) {
-    const elementTop = fpvRef.current.getBoundingClientRect().top + window.scrollY;
+
+const scrollToSection = (sectionRef) => {
+  if(sectionRef.current && navbarRef.current) {
+    const elementTop = sectionRef.current.getBoundingClientRect().top + window.scrollY;
     const navbarHeight = navbarRef.current.getBoundingClientRect().height;
     window.scrollTo({
       top: elementTop - navbarHeight,
-      behavior: "smooth",
-    });
+      behavior: 'smooth',
+    })
   }
-};
+}
 
-const scrollToSD = () => {
- if(sdRef.current && navbarRef.current) {
-  const elementTop = sdRef.current.getBoundingClientRect().top + window.scrollY;
-  const navbarHeight = navbarRef.current.getBoundingClientRect().height;
-  window.scrollTo({
-    top: elementTop - navbarHeight,
-    behavior: "smooth",
-  });
- }
-};
 
   return (
     <div className="App">
       <Navbar 
-        scrollToGallery={scrollToFPV}
+        // scrollToGallery={scrollToFPV}
+        scrollToSection={scrollToSection}
         fpvRef={fpvRef}
         navbarRef={navbarRef}
+        // scrollToAbout={scrollToAbout}
       />
       <Hero 
-        scrollToFPV={scrollToFPV} 
-        scrollToSD={scrollToSD} 
+        scrollToSection = {scrollToSection}
+        fpvRef={fpvRef}
+        sdRef={sdRef}
       />
-      <AboutBlurb />
+      <AboutBlurb 
+        aboutRef={aboutRef}
+      />
       <Services/>
       <Portfolio 
         title="FPV Gallery" 

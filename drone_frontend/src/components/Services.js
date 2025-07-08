@@ -3,11 +3,11 @@ import ContactModal from "./ContactModal";
 import { serviceData } from "./GeneralMediaData";
 import { CheckCircle } from "lucide-react"; // Or swap with any icon you use
 
-export default function Services() {
+export default function Services({servicesRef}) {
   const [showContactModal, setShowContactModal] = useState(false);
 
   return (
-    <div className="bg-[#384454]">
+    <div className="bg-[#384454]" ref={servicesRef}>
       {/* Mobile: Hero image + list */}
       <div className="block md:hidden">
         <div className="relative w-full h-60">

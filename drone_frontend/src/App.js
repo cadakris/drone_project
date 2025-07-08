@@ -12,6 +12,7 @@ function App() {
   const sdRef = useRef(null); // Reference for Drone section
   const navbarRef = useRef(null);
   const aboutRef = useRef(null);
+  const servicesRef = useRef(null);
 
 
 const scrollToSection = (sectionRef) => {
@@ -29,11 +30,10 @@ const scrollToSection = (sectionRef) => {
   return (
     <div className="App">
       <Navbar 
-        // scrollToGallery={scrollToFPV}
         scrollToSection={scrollToSection}
         fpvRef={fpvRef}
+        servicesRef={servicesRef}
         navbarRef={navbarRef}
-        // scrollToAbout={scrollToAbout}
       />
       <Hero 
         scrollToSection = {scrollToSection}
@@ -43,7 +43,9 @@ const scrollToSection = (sectionRef) => {
       <AboutBlurb 
         aboutRef={aboutRef}
       />
-      <Services/>
+      <Services
+      servicesRef={servicesRef}
+      />
       <Portfolio 
         title="FPV Gallery" 
         filter="FPV"

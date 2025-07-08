@@ -28,7 +28,7 @@ if (hoveredSide === "left") {
       <RightContainer
         hoveredSide={hoveredSide}
         setHoveredSide={setHoveredSide}
-        scrollToStabilized={scrollToSection}
+        scrollToStabilized={() => scrollToSection(sdRef)}
         widthClass={rightWidth}   // 🚨 pass computed width
       />
     </div>

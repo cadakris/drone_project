@@ -3,7 +3,7 @@ import { IoIosArrowForward, IoIosMenu } from "react-icons/io"; // Hamburger Icon
 import logoNoBackground from '../images/logoNoBackground.png'; // Your logo image
 import ContactModal from './ContactModal'
 
-function Navbar({scrollToGallery, scrollToAbout, navbarRef}) {
+function Navbar({scrollToSection, navbarRef, fpvRef, servicesRef}) {
   const [isOpen, setIsOpen] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
 
@@ -18,19 +18,14 @@ function Navbar({scrollToGallery, scrollToAbout, navbarRef}) {
           <ul className="flex items-center space-x-8 md:space-x-16 lg:space-x-20 text-base md:text-xl lg:text-2xl">
             <li className="flex items-center gap-2 hover:text-gray-400">
               <IoIosArrowForward />
-              <a href="#About"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToAbout();
-                }}
-              >About</a>
+              <a href="#About">About</a>
             </li>
             <li className="flex items-center gap-2 hover:text-gray-400">
               <IoIosArrowForward />
               <button
                   onClick={(e) => {
                   e.preventDefault();
-                  scrollToGallery();
+                  scrollToSection(fpvRef)
                 }}
               >
                 Gallery
@@ -53,7 +48,14 @@ function Navbar({scrollToGallery, scrollToAbout, navbarRef}) {
           <ul className="flex items-center space-x-8 md:space-x-16 lg:space-x-20 text-base md:text-xl lg:text-2xl">
             <li className="flex items-center gap-2 hover:text-gray-400">
               <IoIosArrowForward />
-              <a href="#services">Services</a>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(servicesRef)
+                }}
+              >
+                Services
+              </button>
             </li>
             <li className="flex items-center gap-2 hover:text-gray-400">
               <IoIosArrowForward />
@@ -107,7 +109,6 @@ function Navbar({scrollToGallery, scrollToAbout, navbarRef}) {
       <li className="flex items-center gap-2">
         <IoIosArrowForward />
         <a
-          onClick={scrollToGallery} 
           className="text-2xl">Gallery</a>
       </li>
       <li className="flex items-center gap-2">

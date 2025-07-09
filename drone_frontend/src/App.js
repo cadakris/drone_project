@@ -33,6 +33,7 @@ const scrollToSection = (sectionRef) => {
         scrollToSection={scrollToSection}
         fpvRef={fpvRef}
         servicesRef={servicesRef}
+        aboutRef={aboutRef}
         navbarRef={navbarRef}
       />
       <Hero 

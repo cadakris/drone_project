@@ -53,33 +53,28 @@ const [showContactModal, setShowContactModal] = useState(false);
                 rel="noopener noreferrer"
                 className="inline-block"
               >
-                <FaWhatsapp className="text-[#E1A624] w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+                <FaWhatsapp className="text-[#E1A624] text-opacity-70 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
                 hover:shadow-lg hover:scale-110 transition-transform duration-200"
                 />
               </a>
             </li>
             <li>
               <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <FaEnvelope className="text-[#E1A624] w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
-                hover:shadow-lg hover:scale-110 transition-transform duration-200
-                " 
-                />
+                <FaEnvelope className="text-[#E1A624] text-opacity-70 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+                hover:shadow-lg hover:scale-110 transition-transform duration-200"/>
               </a>
             </li>
             <li>
               <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block
-              hover:shadow-lg hover:scale-110 transition-transform duration-200
-              ">
-                <FaInstagram className="text-[#E1A624] w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
-                hover:shadow-lg hover:scale-110 transition-transform duration-200
-                " />
+              hover:shadow-lg hover:scale-110 transition-transform duration-200" >
+                <FaInstagram className="text-[#E1A624] text-opacity-70 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+                hover:shadow-lg hover:scale-110 transition-transform duration-200" />
               </a>
             </li>
             <li>
               <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <FaYoutube className="text-[#E1A624] w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
-                hover:shadow-lg hover:scale-110 transition-transform duration-200"
-                />
+                <FaYoutube className="text-[#E1A624] text-opacity-70 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+                hover:shadow-lg hover:scale-110 transition-transform duration-200"/>
               </a>
             </li>
           </ul>

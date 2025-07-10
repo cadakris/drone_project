@@ -4,6 +4,8 @@ import Email2 from '../images/Email2.png';
 import Instagram from '../images/Instagram.png';
 import YouTube from '../images/YouTube.png';
 
+import { FaWhatsapp, FaEnvelope, FaInstagram, FaYoutube } from 'react-icons/fa';
+
 function ContactModal({ onClose }) {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -92,26 +94,29 @@ function ContactModal({ onClose }) {
 
         {/* Social Links */}
         <div className="flex justify-center gap-4 mt-8">
-          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
-            <div className="h-12 w-12 rounded-full overflow-hidden">
-              <img src={WhatsApp} alt="WhatsApp" className="h-full w-full object-cover" />
-            </div>
-          </a>
-          <a href="" target="_blank" rel="noopener noreferrer">
-            <div className="h-12 w-12 rounded-full overflow-hidden">
-              <img src={Email2} alt="Email link" className="h-full w-full object-cover" />
-            </div>
-          </a>
-          <a href="" target="_blank" rel="noopener noreferrer">
-            <div className="h-12 w-12 rounded-full overflow-hidden">
-              <img src={Instagram} alt="Instagram link" className="h-full w-full object-cover" />
-            </div>
-          </a>
-          <a href="" target="_blank" rel="noopener noreferrer">
-            <div className="h-12 w-12 rounded-full overflow-hidden">
-              <img src={YouTube} alt="YouTube link" className="h-full w-full object-cover" />
-            </div>
-          </a>
+              <a 
+                href="https://wa.me/13474523910" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <FaWhatsapp className="text-[#E1A624] text-opacity-70 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+                hover:shadow-lg hover:scale-110 transition-transform duration-200"
+                />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <FaEnvelope className="text-[#E1A624] text-opacity-70 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+                hover:shadow-lg hover:scale-110 transition-transform duration-200"/>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block
+              hover:shadow-lg hover:scale-110 transition-transform duration-200" >
+                <FaInstagram className="text-[#E1A624] text-opacity-70 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+                hover:shadow-lg hover:scale-110 transition-transform duration-200" />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <FaYoutube className="text-[#E1A624] text-opacity-70 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+                hover:shadow-lg hover:scale-110 transition-transform duration-200"/>
+              </a>
         </div>
       </div>
 
@@ -187,26 +192,29 @@ function ContactModal({ onClose }) {
           </div>
 
           <div className="flex justify-start gap-4 mt-4">
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
-              <div className="h-10 w-10 md:h-12 md:w-12 rounded-full overflow-hidden">
-                <img src={WhatsApp} alt="WhatsApp" className="h-full w-full object-cover" />
-              </div>
-            </a>
-            <a href="" target="_blank" rel="noopener noreferrer">
-              <div className="h-10 w-10 md:h-12 md:w-12 rounded-full overflow-hidden">
-                <img src={Email2} alt="Email link" className="h-full w-full object-cover" />
-              </div>
-            </a>
-            <a href="" target="_blank" rel="noopener noreferrer">
-              <div className="h-10 w-10 md:h-12 md:w-12 rounded-full overflow-hidden">
-                <img src={Instagram} alt="Instagram link" className="h-full w-full object-cover" />
-              </div>
-            </a>
-            <a href="" target="_blank" rel="noopener noreferrer">
-              <div className="h-10 w-10 md:h-12 md:w-12 rounded-full overflow-hidden">
-                <img src={YouTube} alt="YouTube link" className="h-full w-full object-cover" />
-              </div>
-            </a>
+              <a 
+                href="https://wa.me/13474523910" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <FaWhatsapp className="text-[#E1A624] text-opacity-70 w-12 h-12 md:w-16 
+                 hover:scale-110 transition-transform duration-200"
+                />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <FaEnvelope className="text-[#E1A624] text-opacity-70 w-12 h-12 md:w-16
+                 hover:scale-110 transition-transform duration-200"/>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block
+               hover:scale-110 transition-transform duration-200" >
+                <FaInstagram className="text-[#E1A624] text-opacity-70 w-12 h-12 md:w-16
+                 hover:scale-110 transition-transform duration-200" />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <FaYoutube className="text-[#E1A624] text-opacity-70 w-12 h-12 md:w-16
+                 hover:scale-110 transition-transform duration-200"/>
+              </a>
           </div>
         </div>
       </div>

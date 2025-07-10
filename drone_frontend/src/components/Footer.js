@@ -7,31 +7,35 @@ import logoNoBackground from '../images/logoNoBackground.png';
 import { IoIosArrowForward } from "react-icons/io";
 import ContactModal from './ContactModal'
 
+import { FaWhatsapp, FaEnvelope, FaInstagram, FaYoutube } from 'react-icons/fa';
+
 function Footer() {
 
 const [showContactModal, setShowContactModal] = useState(false);
 
   return (
     <>
-      <div className="w-full bg-[#384454] py-12 px-8 text-white space-y-12 text-center">
+          <div className="w-full bg-[#384454] py-12 px-8 text-white space-y-12 text-center">
         {/* LEFT - CONTACT SECTION */}
         <div className="flex flex-col items-center space-y-4">
           <p className="text-xl md:text-2xl font-semibold">SEEN ENOUGH?</p>
-          <p className="text-[#317AC1] text-4xl md:text-5xl lg:text-6xl">Contact Us</p>
-          <button
-            className="flex items-center justify-center 
-            bg-[#E1A624] bg-opacity-70 text-white 
-            text-2xl md:text-3xl lg:text-4xl 
-            hover:shadow-lg hover:scale-110 transition-transform duration-200 
-            rounded-full 
-            w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16"
-            onClick={(e) => {
-              e.preventDefault();
-              setShowContactModal(true);
-            }}
-          >
-            <IoIosArrowForward />
-          </button>
+          <div className="flex items-center space-x-4">
+            <p className="text-[#317AC1] text-4xl md:text-5xl lg:text-6xl">Contact Us</p>
+            <button
+              className="flex items-center justify-center 
+              bg-[#E1A624] bg-opacity-70 text-white 
+              text-2xl md:text-3xl lg:text-4xl 
+              hover:shadow-lg hover:scale-110 transition-transform duration-200 
+              rounded-full 
+              w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowContactModal(true);
+              }}
+            >
+              <IoIosArrowForward />
+            </button>
+          </div>
         </div>
 
         {/* RIGHT - SOCIALS SECTION */}
@@ -49,30 +53,33 @@ const [showContactModal, setShowContactModal] = useState(false);
                 rel="noopener noreferrer"
                 className="inline-block"
               >
-                <div className="h-12 w-12 md:h-16 md:w-16 rounded-full">
-                  <img src={WhatsApp} alt="WhatsApp" className="h-full w-full object-cover" />
-                </div>
+                <FaWhatsapp className="text-[#E1A624] w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+                hover:shadow-lg hover:scale-110 transition-transform duration-200"
+                />
               </a>
             </li>
             <li>
               <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <div className="h-12 w-12 md:h-16 md:w-16 rounded-full">
-                  <img src={Email2} alt="Email" className="h-full w-full object-cover" />
-                </div>
+                <FaEnvelope className="text-[#E1A624] w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+                hover:shadow-lg hover:scale-110 transition-transform duration-200
+                " 
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block
+              hover:shadow-lg hover:scale-110 transition-transform duration-200
+              ">
+                <FaInstagram className="text-[#E1A624] w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+                hover:shadow-lg hover:scale-110 transition-transform duration-200
+                " />
               </a>
             </li>
             <li>
               <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <div className="h-12 w-12 md:h-16 md:w-16 rounded-full">
-                  <img src={Instagram} alt="Instagram" className="h-full w-full object-cover" />
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <div className="h-12 w-12 md:h-16 md:w-16 rounded-full">
-                  <img src={YouTube} alt="YouTube" className="h-full w-full object-cover" />
-                </div>
+                <FaYoutube className="text-[#E1A624] w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20
+                hover:shadow-lg hover:scale-110 transition-transform duration-200"
+                />
               </a>
             </li>
           </ul>
@@ -81,6 +88,7 @@ const [showContactModal, setShowContactModal] = useState(false);
         {/* CONTACT MODAL */}
         {showContactModal && <ContactModal onClose={() => setShowContactModal(false)} />}
       </div>
+
     </>
     
   )

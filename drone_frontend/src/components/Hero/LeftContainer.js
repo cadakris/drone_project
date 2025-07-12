@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { videoData } from "./MediaData";
 
-function LeftContainer({ hoveredSide, setHoveredSide, scrollToFPV, widthClass  }) {
+function LeftContainer({ setHoveredSide, scrollToFPV, widthClass  }) {
   const videoRef = useRef(null);
   const timerRef = useRef(null);
   const [descFullyRevealed, setDescFullyRevealed] = useState(false);
@@ -70,19 +70,19 @@ const handleMouseEnter = () => {
   </div>
 
   {/* Big screen text */}
-  <div
-    className="hidden md:block absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-white text-center transition-opacity duration-500 cursor-pointer px-4"
-    style={{ mixBlendMode: "difference" }}
-  >
-    <div className="relative max-w-[90%] scroll-mt-20">
-      <h1 className="text-5xl font-bold leading-tight mt-1">
-        FPV
-      </h1>
-      <p className={`text-base mt-3 transition-opacity duration-200 ${descFullyRevealed ? "opacity-100" : "opacity-0"}`}>
-        Experience the thrill of immersive FPV drone flights, capturing the world from dynamic angles.
-      </p>
-    </div>
+<div
+  className="hidden md:flex absolute inset-0 flex-col items-center justify-center text-white text-center px-4 pointer-events-none"
+  style={{ mixBlendMode: "difference" }}
+>
+  <div className="max-w-[90%]">
+    <h1 className="text-5xl font-bold leading-tight mt-1">
+      FPV
+    </h1>
+    <p className={`text-base mt-3 transition-opacity duration-200 ${descFullyRevealed ? "opacity-100" : "opacity-0"}`}>
+      Experience the thrill of immersive FPV drone flights, capturing the world from dynamic angles.
+    </p>
   </div>
+</div>
 </div>
   );
 }

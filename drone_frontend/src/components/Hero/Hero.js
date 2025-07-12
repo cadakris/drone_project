@@ -20,16 +20,14 @@ if (hoveredSide === "left") {
   return (
     <div className="flex flex-col md:flex-row w-full md:h-[80vh] bg-[#384454]">
       <LeftContainer
-        hoveredSide={hoveredSide}
         setHoveredSide={setHoveredSide}
         scrollToFPV={() => scrollToSection(fpvRef)}
-        widthClass={leftWidth}    // 🚨 pass computed width
+        widthClass={leftWidth}
       />
       <RightContainer
-        hoveredSide={hoveredSide}
         setHoveredSide={setHoveredSide}
         scrollToStabilized={() => scrollToSection(sdRef)}
-        widthClass={rightWidth}   // 🚨 pass computed width
+        widthClass={rightWidth}
       />
     </div>
   );

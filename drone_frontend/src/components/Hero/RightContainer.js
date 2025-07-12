@@ -69,10 +69,10 @@ const handleMouseEnter = () => {
 
   {/* Big screen text */}
   <div
-    className="hidden md:block absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-white text-center transition-opacity duration-500 cursor-pointer px-4"
+    className="hidden md:flex absolute inset-0 flex-col items-center justify-center text-white text-center px-4 pointer-events-none"
     style={{ mixBlendMode: "difference" }}
   >
-    <div className="relative max-w-[90%] scroll-mt-20">
+    <div className="relative max-w-[90%]">
       <h1 className="text-5xl font-bold leading-tight mt-1">
         Stabilized Drone
       </h1>

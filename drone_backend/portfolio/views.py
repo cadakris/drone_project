@@ -22,7 +22,7 @@ def about(request):
 def project_posts_list(request):
     # Query all ProjectPost objects
     project_posts = list(ProjectPost.objects.values(
-        'project_title', 'image', 'video', 'description', 'project_type'
+        'project_title_en', 'project_title_fr', 'video', 'description_en', 'description_fr','project_type'
     ))
     if not project_posts:
         print("No data found in ProjectPost.")

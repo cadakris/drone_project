@@ -25,8 +25,8 @@ const ProjectPosts = ({ post }) => {
   />
         {/* Hover Title and Description */}
         <div className="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <h3 className="text-lg font-bold p-1">{post.project_title}</h3>
-          <p className="text-sm p-1">{post.description}</p>
+          <h3 className="text-lg font-bold p-1">{post.project_title_en}</h3>
+          <p className="text-sm p-1">{post.description_en}</p>
           <div className="flex justify-center p-6">
             <button
                 onClick={openModal}

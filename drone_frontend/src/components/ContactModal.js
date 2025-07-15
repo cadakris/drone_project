@@ -65,7 +65,7 @@ function ContactModal({ onClose }) {
           Tell Us About Your Project!
         </h2>
 
-        <form className="flex flex-col gap-6 flex-1">
+        <form className="flex flex-col gap-6 flex-1 text-black">
           <input
             type="text"
             placeholder="Your Name"
@@ -135,7 +135,7 @@ function ContactModal({ onClose }) {
           <h2 className="text-[#317AC1] text-2xl font-semibold mb-4 text-center">
             Tell Us About Your Project!
           </h2>
-          <form className="flex flex-col gap-7">
+          <form className="flex flex-col gap-7 text-black">
             <input
               type="text"
               placeholder="Your Name"

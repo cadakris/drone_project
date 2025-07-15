@@ -1,9 +1,8 @@
 from django.urls import path
-from . import views
-from .api import project_post_list #import your API view
+from .views import ProjectPostListView
 
 urlpatterns = [
-    path('', views.index, name='index'),  # This maps the empty path '' to the index view
-    path('about/', views.about, name='about'),
-    path('api/project-posts/', project_post_list, name='project-posts')  # API endpoint
+    # path('', IndexView.as_view(), name='index'),
+    # path('about/', AboutView.as_view(), name='about'),
+    path('project-posts/', ProjectPostListView.as_view(), name='project-posts'),
 ]

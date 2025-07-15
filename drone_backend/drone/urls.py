@@ -19,6 +19,6 @@ from django.urls import path, include  # Make sure 'include' is imported
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Admin path
-    path('drone/', include('portfolio.urls')), # Pointing directly to the index view
+    path('drone/api/', include('portfolio.urls')), # Pointing directly to the index view
 ]
 

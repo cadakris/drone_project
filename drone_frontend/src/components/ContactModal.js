@@ -1,9 +1,5 @@
-import React, { useEffect } from 'react';
-import WhatsApp from '../images/WhatsApp.png';
-import Email2 from '../images/Email2.png';
-import Instagram from '../images/Instagram.png';
-import YouTube from '../images/YouTube.png';
-
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { FaWhatsapp, FaEnvelope, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 function ContactModal({ onClose }) {
@@ -13,6 +9,24 @@ function ContactModal({ onClose }) {
       document.body.style.overflow = 'auto';
     };
   }, []);
+
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [statusMessage, setStatusMessage] = useState(null);
+
+  const handleChange = (e) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await axios.post('http://localhost:8000/drone/contact/', formData);
+    setStatusMessage(response.data.success);
+    setFormData({ name: '', email: '', message: '' });
+  } catch (error) {
+    setStatusMessage('Failed to send message. Please try again.');
+  }
+};
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto">
@@ -65,32 +79,42 @@ function ContactModal({ onClose }) {
           Tell Us About Your Project!
         </h2>
 
-        <form className="flex flex-col gap-6 flex-1 text-black">
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-            required
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-            required
-          />
-          <textarea
-            placeholder="Your Message"
-            rows={6}
-            className="p-3 border border-gray-300 rounded-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
-            required
-          ></textarea>
-          <button
-            type="submit"
-            className="bg-white text-black py-3 px-6 rounded-sm hover:bg-gray-400 transition mt-auto"
-          >
-            Send Message
-          </button>
-        </form>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1 text-black">
+  <input
+    type="text"
+    name="name"
+    value={formData.name}
+    onChange={handleChange}
+    placeholder="Your Name"
+    className="p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+    required
+  />
+  <input
+    type="email"
+    name="email"
+    value={formData.email}
+    onChange={handleChange}
+    placeholder="Your Email"
+    className="p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+    required
+  />
+  <textarea
+    name="message"
+    value={formData.message}
+    onChange={handleChange}
+    placeholder="Your Message"
+    rows={6}
+    className="p-3 border border-gray-300 rounded-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+    required
+  ></textarea>
+  <button
+    type="submit"
+    className="bg-white text-black py-3 px-6 rounded-sm hover:bg-gray-400 transition mt-auto"
+  >
+    Send Message
+  </button>
+</form>
+
 
         {/* Social Links */}
         <div className="flex justify-center gap-4 mt-8">
@@ -135,32 +159,42 @@ function ContactModal({ onClose }) {
           <h2 className="text-[#317AC1] text-2xl font-semibold mb-4 text-center">
             Tell Us About Your Project!
           </h2>
-          <form className="flex flex-col gap-7 text-black">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            />
-            <textarea
-              placeholder="Your Message"
-              rows={5}
-              className="p-3 border border-gray-300 rounded-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            ></textarea>
-            <button
-              type="submit"
-              className="bg-[#384454] text-white py-3 px-6 rounded-sm hover:bg-[#2e3a4b] transition"
-            >
-              Send Message
-            </button>
-          </form>
+<form onSubmit={handleSubmit} className="flex flex-col gap-7 text-black">
+  <input
+    type="text"
+    name="name"
+    value={formData.name}
+    onChange={handleChange}
+    placeholder="Your Name"
+    className="p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+    required
+  />
+  <input
+    type="email"
+    name="email"
+    value={formData.email}
+    onChange={handleChange}
+    placeholder="Your Email"
+    className="p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+    required
+  />
+  <textarea
+    name="message"
+    value={formData.message}
+    onChange={handleChange}
+    placeholder="Your Message"
+    rows={5}
+    className="p-3 border border-gray-300 rounded-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+    required
+  ></textarea>
+  <button
+    type="submit"
+    className="bg-[#384454] text-white py-3 px-6 rounded-sm hover:bg-[#2e3a4b] transition"
+  >
+    Send Message
+  </button>
+</form>
+
         </div>
 
         {/* Right column: Contact details */}

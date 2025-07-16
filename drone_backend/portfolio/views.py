@@ -18,7 +18,7 @@ class ContactFormView(APIView):
     def post(self, request):
         name=request.data.get('name')
         email=request.data.get('email')
-        message=request.data.get('email')
+        message=request.data.get('message')
 
         if not all([name, email, message]):
             return Response({"Error":"All fields are required."}, status=status.HTTP_400_BAD_REQUEST)

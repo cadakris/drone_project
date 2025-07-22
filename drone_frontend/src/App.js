@@ -26,6 +26,12 @@ const scrollToSection = (sectionRef) => {
   }
 }
 
+// const fetchAboutBlurbs = async () => {
+//   try {
+//     const response = await axios.get("")
+//   }
+// }
+
 
   return (
     <div className="App">

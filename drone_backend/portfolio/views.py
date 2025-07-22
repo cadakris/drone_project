@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import ProjectPost
+from .models import About
 from .serializers import ProjectPostSerializer
 from django.core.mail import send_mail
 from django.conf import settings
@@ -34,3 +35,24 @@ class ContactFormView(APIView):
         )
 
         return Response({"success":"Message sent successfully!"}, status=status.HTTP_200_OK)
+    
+class AboutView(APIView):
+    def get(self, request):
+        lang = request.query_params.get('lang', 'en')  # default to 'en' if not specified
+        about = About.objects.first()
+        
+        if not about:
+            return Response({"error": "No About content found."}, status=status.HTTP_404_NOT_FOUND)
+
+        if lang == 'fr':
+            data = {
+                "tagline": about.tagline_fr,
+                "description": about.large_description_fr
+            }
+        else:
+            data = {
+                "tagline": about.tagline_en,
+                "description": about.large_description_en
+            }
+
+        return Response(data, status=status.HTTP_200_OK)

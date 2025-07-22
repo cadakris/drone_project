@@ -9,7 +9,7 @@ const Portfolio = ({ title, filter, fpvRef, sdRef }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/drone/api/project-posts/");
+        const response = await axios.get("http://localhost:8000/drone/project-posts/");
         const allPosts = response.data;
 
         // Filter posts by project_type

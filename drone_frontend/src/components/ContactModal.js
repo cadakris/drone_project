@@ -12,6 +12,7 @@ function ContactModal({ onClose }) {
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [statusMessage, setStatusMessage] = useState(null);
+  const [showThankYou, setShowThankYou] = useState(false);
 
   const handleChange = (e) => {
   setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,15 +22,21 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   try {
     const response = await axios.post('http://localhost:8000/drone/contact/', formData);
-    setStatusMessage(response.data.success);
     setFormData({ name: '', email: '', message: '' });
+    setShowThankYou(true);
+    setTimeout(() => {
+      setShowThankYou(false);
+    }, 2000);
   } catch (error) {
     setStatusMessage('Failed to send message. Please try again.');
   }
 };
 
   return (
+<>
+
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto">
+
       {/* Background Layer */}
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm sm:block hidden" />
 
@@ -252,7 +259,16 @@ const handleSubmit = async (e) => {
           </div>
         </div>
       </div>
+      {showThankYou && (
+  <div className="fixed inset-0 z-[9999] bg-black/50 flex items-center justify-center">
+    <div className="bg-white rounded-lg shadow-xl p-6 max-w-sm text-center">
+      <h2 className="text-xl font-semibold text-[#384454] mb-2">Thank you!</h2>
+      <p className="text-[#384454]">Your message has been sent.</p>
     </div>
+  </div>
+)}
+    </div>
+    </>
   );
 }
 
